@@ -1,0 +1,2 @@
+class ItemReview < ApplicationRecord
+end
