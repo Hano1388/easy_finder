@@ -5,11 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-  Category.destroy_all
+
+  # Category.destroy_all
+  # Store.destroy_all
+  # Aisle.destroy_all
+  # Row.destroy_all
+  # Shelf.destroy_all
   # Item.destroy_all
   # ItemReview.destroy_all
-  Store.destroy_all
-  Aisle.destroy_all
+  # StoreReview.destroy_all
 
 categories = Category.create([
   {name: 'Food'},
@@ -28,11 +32,11 @@ categories = Category.create([
   {name: 'Eating'},
   ])
 
-  10.times do
-    Store.create([
-    { name: Faker::Company.name },
-    {location: Faker::Address.city},
-    ])
+  2.times do
+    Store.create(
+      name: Faker::Company.name,
+      location: Faker::Address.city
+    )
   end
 
   counter = (1..20).to_a
@@ -64,42 +68,61 @@ categories = Category.create([
       end
     end
 
+    # Shelf.all.each do |shelf|
+    #   Item.create name: Faker::Food.ingredient,
+    #               description: Faker::Hipster.paragraph,
+    #               price: rand(1000),
+    #               quantity: rand(500),
+    #               category: Category.all.sample,
+    #               shelf: shelf
+    # end
+
+# First create Item with categories seperately
+# Second fill the StoreItem table with the same items for both stores
+# Third fill the shelves randomly for each store by items
+
+# FIRST
+    300.times do
+      Item.create name: Faker::Food.ingredient,
+                  description: Faker::Hipster.paragraph,
+                  price: rand(1000),
+                  quantity: rand(500),
+                  category: Category.all.sample
+    end
+
+# SECOND
+Store.all.each do |store|
+  Item.all.each do |item|
+    StoreItem.create(
+    store: store,
+    item: item
+    )
+  end
+end
+
+# Third
+# Store.all.each do |store|
+#   store.aisles.each do |aisle|
+#     aisle.rows.each do |row|
+#       row.shelves.each do |shelf|
+#         shelf.update_attributes(item: )
+    # Store.all.each do |store|
+    #   store.aisles.each do |aisle|
+    #     aisle.rows.each do |row|
+    #       row.shelves.each do |shelf|
+    #         shelf.items.each do |item|
+    #             StoreItem.create(
+    #             store_id: store.id,
+    #             item_id: item.id
+    #             )
+    #         end
+    #       end
+    #     end
+    #   end
+    # end
 
 
-  # for( let i = 0; i < 10; i++) {
-  #   Store.create([
-  #     {name: Faker::Company.name},
-  #     {location: Faker::Address.city},
-  #     # {latitude: Faker::Address.latitude},
-  #     # {longitude: Faker::Address.longitude},
-  #     ])
-  #     for( let j = 1; j < 20; j++){
-  #       Aisle.create([
-  #         { aisle_number: j },
-  #         { aisle_side: if(j < 10) ? 'Right' : 'Left' },
-  #         { store: Store.last },
-  #         ])
-  #         for( let k = 1; k < 10; k++ ){
-  #           Row.create([
-  #             { row_number: k },
-  #             { aisle: Aisle.last },
-  #             ])
-  #             for( let l = 0; l < 20; l++){
-  #               Shelf.create([
-  #                 { shelf_number: l },
-  #                 { row: Row.last },
-  #                 ])
-  #             }
-  #         }
-  #     }
-  # }
 
-  # 15.times do
-  #   Item.create name: Faker::Food.sample[ingredient,spice, measurement],
-  #               description: Faker.Hipster.paragraph,
-  #               price: rand(1000),
-  #               sale_price: price,
-  #               quantity: rand(500),
-  #               category: category.sample,
-  #               shelf: shelf.sample
-  # end
+Item.all.each do |item|
+  item.update_column :sale_price, item.price
+end
