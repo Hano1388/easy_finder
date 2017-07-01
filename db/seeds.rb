@@ -103,15 +103,15 @@ end
 # Third
 
   Store.all.each do |store|
-    it = store.items.first
+    item = store.items.first
     store.aisles.each do |aisle|
       aisle.rows.each do |row|
-        row.shelves.each_with_index  do |shelf, i|
-          if i < Item.count
-            it.shelf_id = shelf.id
-            it.save
-            it = it.next
-            break unless it
+        row.shelves.each_with_index  do |shelf, counter|
+          if counter < Item.count
+            item.shelf_id = shelf.id
+            item.save
+            item = item.next
+            break unless item
           end
         end
       end
