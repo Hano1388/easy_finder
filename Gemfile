@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 ruby '2.4.1'
+gem 'rb-fsevent', '~> 0.9.8'
 
 gem 'faker', github: 'stympy/faker'
 gem 'cowsay'
@@ -28,11 +29,10 @@ gem 'rails-erd'
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-gem 'cancancan'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt', '~> 3.1.7'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'bootstrap-datepicker-rails'

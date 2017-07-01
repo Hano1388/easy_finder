@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170629081611) do
+ActiveRecord::Schema.define(version: 20170630005440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "aisles", force: :cascade do |t|
     t.integer "aisle_number"
-    t.boolean "aisle_side"
     t.bigint "store_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -28,6 +27,14 @@ ActiveRecord::Schema.define(version: 20170629081611) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "item_reviews", force: :cascade do |t|
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "item_id"
+    t.index ["item_id"], name: "index_item_reviews_on_item_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -52,15 +59,6 @@ ActiveRecord::Schema.define(version: 20170629081611) do
     t.index ["aisle_id"], name: "index_rows_on_aisle_id"
   end
 
-  create_table "shelf_items", force: :cascade do |t|
-    t.bigint "item_id"
-    t.bigint "shelf_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_shelf_items_on_item_id"
-    t.index ["shelf_id"], name: "index_shelf_items_on_shelf_id"
-  end
-
   create_table "shelves", force: :cascade do |t|
     t.integer "shelf_number"
     t.bigint "row_id"
@@ -78,21 +76,28 @@ ActiveRecord::Schema.define(version: 20170629081611) do
     t.index ["store_id"], name: "index_store_items_on_store_id"
   end
 
+  create_table "store_reviews", force: :cascade do |t|
+    t.text "body"
+    t.bigint "store_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_id"], name: "index_store_reviews_on_store_id"
+  end
+
   create_table "stores", force: :cascade do |t|
     t.string "name"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_stores_on_name"
   end
 
   add_foreign_key "aisles", "stores"
+  add_foreign_key "item_reviews", "items"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "shelves"
   add_foreign_key "rows", "aisles"
-  add_foreign_key "shelf_items", "items"
-  add_foreign_key "shelf_items", "shelves"
   add_foreign_key "shelves", "rows"
   add_foreign_key "store_items", "items"
   add_foreign_key "store_items", "stores"
+  add_foreign_key "store_reviews", "stores"
 end
