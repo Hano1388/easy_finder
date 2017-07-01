@@ -101,27 +101,22 @@ Store.all.each do |store|
 end
 
 # Third
-# Store.all.each do |store|
-#   store.aisles.each do |aisle|
-#     aisle.rows.each do |row|
-#       row.shelves.each do |shelf|
-#         shelf.update_attributes(item: )
-    # Store.all.each do |store|
-    #   store.aisles.each do |aisle|
-    #     aisle.rows.each do |row|
-    #       row.shelves.each do |shelf|
-    #         shelf.items.each do |item|
-    #             StoreItem.create(
-    #             store_id: store.id,
-    #             item_id: item.id
-    #             )
-    #         end
-    #       end
-    #     end
-    #   end
-    # end
 
-
+  Store.all.each do |store|
+    it = store.items.first
+    store.aisles.each do |aisle|
+      aisle.rows.each do |row|
+        row.shelves.each_with_index  do |shelf, i|
+          if i < Item.count
+            it.shelf_id = shelf.id
+            it.save
+            it = it.next
+            break unless it
+          end
+        end
+      end
+    end
+  end
 
 Item.all.each do |item|
   item.update_column :sale_price, item.price
