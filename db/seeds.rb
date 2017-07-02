@@ -101,23 +101,23 @@ Store.all.each do |store|
 end
 
 # Third
-# NOTE COPY THAT TO CONSOLE AND RUN IT TO FILL SHELVES WITH ITEMS FOR NOW 
-  # Store.all.each do |store|
-  #   item = store.items.first
-  #   store.aisles.each do |aisle|
-  #     aisle.rows.each do |row|
-  #       row.shelves.each_with_index  do |shelf, counter|
-  #         if counter < Item.count
-  #           item.shelf_id = shelf.id
-  #           item.save
-  #           item = item.next
-  #           # break unless item
-  #           break if Item.last
-  #         end
-  #       end
-  #     end
-  #   end
-  # end
+# NOTE COPY THAT TO CONSOLE AND RUN IT TO FILL SHELVES WITH ITEMS FOR NOW
+  Store.all.each do |store|
+    item = store.items.first
+    store.aisles.each do |aisle|
+      aisle.rows.each do |row|
+        row.shelves.each_with_index  do |shelf, counter|
+          if counter < Item.count
+            item.shelf_id = shelf.id
+            item.save
+            item = item.next
+            # break unless item
+            break if Item.last
+          end
+        end
+      end
+    end
+  end
 
 Item.all.each do |item|
   item.update_column :sale_price, item.price
