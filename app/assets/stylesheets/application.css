@@ -21,3 +21,10 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ .row {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   background-color: whitesmoke;
+ }
