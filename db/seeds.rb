@@ -59,12 +59,26 @@ categories = Category.create([
       end
     end
 
-    Row.all.each do |row|
-      counter.each do |counter|
-        Shelf.create(
-        shelf_number: counter,
-        row: row
-        )
+    # Row.all.each do |row|
+    #   counter.each do |counter|
+    #     Shelf.create(
+    #     shelf_number: counter,
+    #     row: row,
+    #     )
+    #   end
+    # end
+
+    Store.all.each do |store|
+      store.aisles.each do |aisle|
+        aisle.rows.each do |row|
+          counter.each do |counter|
+            Shelf.create(
+            shelf_number: counter,
+            row: row,
+            store: store
+            )
+          end
+        end
       end
     end
 
@@ -90,15 +104,40 @@ categories = Category.create([
                   category: Category.all.sample
     end
 
-# SECOND
-Store.all.each do |store|
-  Item.all.each do |item|
-    StoreItem.create(
-    store: store,
-    item: item
-    )
+    Item.all.each do |item|
+      item.update_column :sale_price, item.price
+    end
+
+  # SECOND
+  Store.all.each do |store|
+    Item.all.each do |item|
+      StoreItem.create(
+      store: store,
+      item: item
+      )
+    end
   end
-end
+
+  # Third
+  Store.all.each do |store|
+    item = store.items.first
+    store.aisles.each do |aisle|
+      aisle.rows.each do |row|
+        row.shelves.each_with_index do |shelf, counter|
+          if counter < Item.count
+            ShelfItem.create(
+                item: item,
+                shelf: shelf
+            )
+            item = item.next
+            break if Item.last
+          end
+        end
+      end
+    end
+  end
+
+
 
 # Third
 # NOTE COPY THAT TO CONSOLE AND RUN IT TO FILL SHELVES WITH ITEMS FOR NOW
@@ -118,7 +157,3 @@ end
   #     end
   #   end
   # end
-
-Item.all.each do |item|
-  item.update_column :sale_price, item.price
-end
