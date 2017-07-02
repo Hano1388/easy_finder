@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
   # Category.destroy_all
   # Store.destroy_all
   # Aisle.destroy_all
@@ -59,15 +51,6 @@ categories = Category.create([
       end
     end
 
-    # Row.all.each do |row|
-    #   counter.each do |counter|
-    #     Shelf.create(
-    #     shelf_number: counter,
-    #     row: row,
-    #     )
-    #   end
-    # end
-
     Store.all.each do |store|
       store.aisles.each do |aisle|
         aisle.rows.each do |row|
@@ -81,19 +64,6 @@ categories = Category.create([
         end
       end
     end
-
-    # Shelf.all.each do |shelf|
-    #   Item.create name: Faker::Food.ingredient,
-    #               description: Faker::Hipster.paragraph,
-    #               price: rand(1000),
-    #               quantity: rand(500),
-    #               category: Category.all.sample,
-    #               shelf: shelf
-    # end
-
-# First create Item with categories seperately
-# Second fill the StoreItem table with the same items for both stores
-# Third fill the shelves randomly for each store by items
 
 # FIRST
     300.times do
@@ -136,24 +106,3 @@ categories = Category.create([
       end
     end
   end
-
-
-
-# Third
-# NOTE COPY THAT TO CONSOLE AND RUN IT TO FILL SHELVES WITH ITEMS FOR NOW
-  # Store.all.each do |store|
-  #   item = store.items.first
-  #   store.aisles.each do |aisle|
-  #     aisle.rows.each do |row|
-  #       row.shelves.each_with_index  do |shelf, counter|
-  #         if counter < Item.count
-  #           item.shelf_id = shelf.id
-  #           item.save
-  #           item = item.next
-  #           # break unless item
-  #           break if Item.last
-  #         end
-  #       end
-  #     end
-  #   end
-  # end

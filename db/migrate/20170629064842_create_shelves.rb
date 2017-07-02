@@ -3,6 +3,7 @@ class CreateShelves < ActiveRecord::Migration[5.1]
     create_table :shelves do |t|
       t.integer :shelf_number
       t.references :row, foreign_key: true, index: true
+      t.references :store, foreign_key: true, index: true
 
       t.timestamps
     end
