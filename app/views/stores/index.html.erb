@@ -1,5 +1,21 @@
 <h1>Stores</h1>
 
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <input type="text" placeholder="Simple search should be her">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <a href="#">Link to advanced search should be here</a>
+    </div>
+  </div>
+
+</div>
+
 <div class="jumbotron">
   <% @stores.each do |store| %>
     <p><strong><%= link_to store.name, store_path(store) %></strong></p>
