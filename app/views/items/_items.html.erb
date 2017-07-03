@@ -1,6 +1,4 @@
-<h1>Search Results</h1>
-
-<% @search.items.each do |item| %>
+<% @items.each do |item| %>
   <p><strong><%= item.name %></strong></p>
   <p>Category: <%= item.category.name %></p>
   <p>Description: <%= item.description %></p>

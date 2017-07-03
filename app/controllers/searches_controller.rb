@@ -1,12 +1,10 @@
 class SearchesController < ApplicationController
   def new
-  @search = Search.new
-    # @categories = Item.all.pluck(:category_id).uniq
-    @categories = Category.all.pluck(:name)
+    @search = Search.new
   end
 
   def create
-    @search = Search.create(search_params)
+    @search = Search.create!(search_params)
     redirect_to @search
   end
 
@@ -15,8 +13,7 @@ class SearchesController < ApplicationController
   end
 
   private
-
   def search_params
-    params.require(:search).permit(:keyword, :category, :min_price, :max_price, :isbn)
+    params.require(:search).permit(:keywords, :category_id, :min_price, :max_price)
   end
 end

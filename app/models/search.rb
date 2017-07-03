@@ -1,13 +1,17 @@
 class Search < ApplicationRecord
-  def search_items
 
-    items = Item.all
+  def items
+    @items ||= find_items
+  end
 
-    items = items.where(["name ILIKE ?", "%#{keywords}%"]) if keywords.present?
-    items = items.where(["Item.category ILIKE ?", "#{category}"]) if category.present?
-    items = items.where(["price >= ?", min_price]) if min_price.present?
-    items = items.where(["price <= ?", max_price]) if max_price.present?
+  private
 
-    return items
+  def find_items
+    items = Item.order(:name)
+    items = items.where("name ILIKE ?", "%#{keywords}") if keywords.present?
+    items = items.where(category_id: category_id) if category_id.present?
+    items = items.where("price >= ?", min_price) if min_price.present?
+    items = items.where("price >= ?", max_price) if max_price.present?
+    items
   end
 end
