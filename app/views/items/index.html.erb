@@ -1,0 +1,14 @@
+<h1>Items index</h1>
+<div class="container">
+  <%= form_tag items_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search" %>
+  <% end %>
+
+  <% @items.each do |item| %>
+    <p><strong><%= item.name %></strong></p>
+    <p>Category: <%= item.category.name %></p>
+    <p>Description: <%= item.description %></p>
+    <p>Price: <%= item.sale_price %></p>
+  <% end %>
+</div>

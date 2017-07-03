@@ -17,6 +17,14 @@ class Item < ApplicationRecord
   # def previuos
   #   self.class.where("id < ?", id).last
   # end
-  #
+
+  def self.search(search)
+    if search
+      where(["name ILIKE ?", "%#{search}%"])
+    else
+      all
+    end
+  end
+
 
 end
