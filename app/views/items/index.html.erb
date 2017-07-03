@@ -5,6 +5,8 @@
     <%= submit_tag "Search" %>
   <% end %>
 
+  <%= link_to "Advanced Search", new_search_path %>
+
   <% @items.each do |item| %>
     <p><strong><%= item.name %></strong></p>
     <p>Category: <%= item.category.name %></p>
