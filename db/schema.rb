@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20170703053314) do
     t.string "keywords"
     t.integer "category_id"
     t.decimal "min_price"
-    t.integer "max_price"
+    t.decimal "max_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

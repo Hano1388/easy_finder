@@ -4,7 +4,7 @@ class CreateSearches < ActiveRecord::Migration[5.1]
       t.string :keywords
       t.integer :category_id
       t.decimal :min_price
-      t.integer :max_price
+      t.decimal :max_price
 
       t.timestamps
     end
