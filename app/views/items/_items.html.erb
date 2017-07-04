@@ -1,0 +1,31 @@
+  <!-- <#% @items.each_slice(1) do |group| %> -->
+  <% @items.each do |item| %>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> <!-- Item details column -->
+          <p><strong><%= item.name %></strong></p>
+          <p>Category: <%= item.category.name %></p>
+          <p>Description: <%= item.description %></p>
+          <p>Price: <%= item.sale_price %></p>
+        </div> <!-- End of item details column -->
+
+          <p>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseStores_<%= item.id %>" aria-expanded="false" aria-controls="collapseStores_<%= item.id %>">
+              Stores
+            </button>
+          </p>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"> <!-- Store details column -->
+          <div class="collapse" id="collapseStores_<%= item.id %>">
+            <div class="card card-block">
+              <!-- <div class="jumbotron"> -->
+                <% item.stores.each do |store| %>
+                  <strong><%= link_to store.name %></strong><br />
+                <% end %>
+              <!-- </div> -->
+            </div>
+          </div>
+        </div> <!-- End of Store details column -->
+
+
+    </div> <!-- End of main Row -->
+    <% end %>
+  <!-- <#% end %> -->
