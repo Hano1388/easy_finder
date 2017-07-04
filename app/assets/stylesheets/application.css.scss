@@ -17,10 +17,12 @@
  *= require_tree .
  *= require_self
  */
-
-
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ * {
+   font-family: Sans-serif, Arial, ;
+ }
 
  .row {
    display: flex;
@@ -28,3 +30,7 @@
    align-items: center;
    background-color: whitesmoke;
  }
+
+// Simple Search styles
+
+    // End of Simple search styles

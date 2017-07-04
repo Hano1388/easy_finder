@@ -22,7 +22,7 @@ class Item < ApplicationRecord
     if search
       where(["name ILIKE ?", "%#{search}%"])
     else
-      all
+      all.order(created_at: :DESC)
     end
   end
 

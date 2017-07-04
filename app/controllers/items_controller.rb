@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
     @items = Item.all.search(params[:search])
   end
 
+
   def item_params
     params.require(:item).permit(:name, :description, :sale_price, :category_id)
   end
