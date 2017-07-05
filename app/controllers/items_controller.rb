@@ -2,7 +2,13 @@ class ItemsController < ApplicationController
 
   def index
     # @items = Item.all.where(["name ILIKE ?", "%#{params[:search]}%"])
-    @items = Item.all.search(params[:search])
+    @search = Search.new
+    if params[:search_id]
+      search = Search.find(params[:search_id])
+      @items = search.items
+    else
+      @items = Item.all.search(params[:search])
+    end
   end
 
 

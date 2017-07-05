@@ -9,8 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= form_for @search do |f| %>
-        <form>
+        <%= form_for @search, method: :post do |f| %>
 
           <div class="form-group">
             <%= f.label :keywords, class: "form-control-label" %>
@@ -40,7 +39,6 @@
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         <%= f.submit "Search", class:"btn btn-primary" %>
       </div>
-    </form>
       <% end %>
     </div>
   </div>
