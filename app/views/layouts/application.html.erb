@@ -16,6 +16,7 @@
   </head>
 
   <body>
+    <%= render 'layouts/sidebar.html.erb' %>
     <div id="flash_message">
       <% if flash[:notice] %>
         <div class='alert alert-success'><%= flash[:notice] %></div>
