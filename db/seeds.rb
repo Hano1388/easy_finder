@@ -83,18 +83,44 @@ categories = Category.create([
   # end
 
 
+
   categories = [
-    [ Faker::Food.ingredient, Category.all.where(name: 'Food').first ],
-    [ Faker::Coffee.variety, Category.all.where(name: 'Coffee').first ],
-    [ Faker::Beer.malts, Category.all.where(name: 'Beer').first ],
-    [ Faker::Book.title, Category.all.where(name: 'Book').first ],
-    [ Faker::Dessert.variety, Category.all.where(name: 'Dessert').first ],
+    [ Category.where(name: 'Food')],
+    [ Category.where(name: 'Coffee')],
+    [ Category.where(name: 'Beer')],
+    [ Category.where(name: 'Book')],
+    [ Category.where(name: 'Dessert')],
   ]
+
   categories.each do |cat|
+    puts cat[0].first.name
     30.times do
+
       price = rand(100)
-      fakeName = cat[0]
-      actualCategory = cat[1]
+      actualCategory = cat[0].first
+
+      # def fakeName(name)
+      #   fakeName = [Faker::Food.ingredient, Faker::Food.spice, Faker::Food.measurement].sample if name == 'Food'
+      #   fakeName = [Faker::Coffee.variety, Faker::Coffee.blend_name, Faker::Coffee.origin].sample if name == 'Coffee'
+      #   fakeName = [Faker::Beer.malts, Faker::Beer.name, Faker::Beer.yeast, Faker::Beer.hop].sample if name == 'Beer'
+      #   fakeName = [Faker::Book.title, Faker::Book.genre].sample  if name == 'Book'
+      #   fakeName = [Faker::Dessert.variety, Faker::Dessert.topping, Faker::Dessert.flavor].sample if name == 'Dessert'
+      # end
+
+      case cat[0].first.name
+      when 'Food'
+        fakeName = [Faker::Food.ingredient, Faker::Food.spice, Faker::Food.measurement].sample
+      when 'Coffee'
+        fakeName = [Faker::Coffee.variety, Faker::Coffee.blend_name, Faker::Coffee.origin].sample
+      when 'Beer'
+        fakeName = [Faker::Beer.malts, Faker::Beer.name, Faker::Beer.yeast, Faker::Beer.hop].sample
+      when 'Book'
+        fakeName = [Faker::Book.title, Faker::Book.genre].sample
+      else
+        fakeName = [Faker::Dessert.variety, Faker::Dessert.topping, Faker::Dessert.flavor].sample
+      end
+
+      # fakeName = cat[0]
       Item.create name: fakeName,
                   description: Faker::Hipster.paragraph,
                   price: price,
@@ -103,10 +129,6 @@ categories = Category.create([
                   category: actualCategory
     end
   end
-    # Item.all.each do |item|
-    #   item.update_column :sale_price, item.price
-    # end
-
   # SECOND
   Store.all.each do |store|
     Item.all.each do |item|
