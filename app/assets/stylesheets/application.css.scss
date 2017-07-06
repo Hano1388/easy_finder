@@ -24,12 +24,41 @@
    font-family: Sans-serif, Arial, ;
  }
 
- .row {
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   background-color: whitesmoke;
+ // ADVENCED SEARCH BUTTON STYLES
+ #advanced-search:hover {
+   background-color: skyblue;
  }
+
+ // END OF ADVANCED SEARCH
+.search-container {
+
+}
+ // SIMPLE SEARCH STYLE
+// .simple-search-field {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   width: 90%;
+//   color: #31b0d5;
+//   background-color: white;
+//   border-radius: 10px;
+// }
+
+// .simple-search-field > .simple-search {
+//   border-radius: 20px;
+// }
+
+// .simple-search-field  .simple-search-button {
+//   border-radius: 20px;
+// }
+ // END OF SIMPLE SEARCH
+
+ // .row {
+ //   display: flex;
+ //   flex-direction: row;
+ //   align-items: center;
+ //   background-color: whitesmoke;
+ // }
 
 // Simple Search styles
 

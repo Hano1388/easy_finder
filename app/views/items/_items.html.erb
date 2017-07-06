@@ -1,31 +1,40 @@
   <!-- <#% @items.each_slice(1) do |group| %> -->
-  <% @items.each do |item| %>
+
+  <div class="container">
+    <% @items.each do |item| %>
     <div class="row">
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"> <!-- Item details column -->
-          <p><strong><%= item.name %></strong></p>
-          <p>Category: <%= item.category.name %></p>
-          <p>Description: <%= item.description %></p>
-          <p>Price: <%= item.sale_price %></p>
-        </div> <!-- End of item details column -->
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <h3>Category: <%= item.category.name %></h3>
+        <h3><%= item.name %></h3>
+        <p>
+          <%= item.description %>
+        </p>
+        <img src="https://phillipssewingshop.com/wp-content/uploads/2017/06/FSC_7500_WH240240-1-200x200.jpg" alt="" class="img img-circle img-responsive">
+        <h3>Price: $ <%= item.sale_price %></h3>
+      </div>
 
-          <p>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseStores_<%= item.id %>" aria-expanded="false" aria-controls="collapseStores_<%= item.id %>">
-              Stores
-            </button>
-          </p>
-          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"> <!-- Store details column -->
-          <div class="collapse" id="collapseStores_<%= item.id %>">
-            <div class="card card-block">
-              <!-- <div class="jumbotron"> -->
-                <% item.stores.each do |store| %>
-                  <strong><%= link_to store.name %></strong><br />
-                <% end %>
-              <!-- </div> -->
-            </div>
-          </div>
-        </div> <!-- End of Store details column -->
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <h3>Stores</h3>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Store Name</th>
+              <th>Location </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% item.stores.each do |store| %>
+            <tr>
+              <td><%= link_to store.name %></td>
+              <td>Downtown</td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <hr />
+    </div>
+      <% end %>
 
 
-    </div> <!-- End of main Row -->
-    <% end %>
-  <!-- <#% end %> -->
+  </div>

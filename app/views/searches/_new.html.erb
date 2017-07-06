@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#searchModal" data-whatever="@mdo">Advanced Search</button>
+<!-- <button type="button" id="advanced-search" class="btn btn-info" data-toggle="modal" data-target="#searchModal" data-whatever="Search">Custom Search</button> -->
 <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -9,29 +9,21 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= form_for @search, method: :post do |f| %>
+        <%= simple_form_for @search, method: :post do |f| %>
 
           <div class="form-group">
-            <%= f.label :keywords, class: "form-control-label" %>
-            <%= f.text_field :keywords, class: "form-control" %>
+            <%= f.input :keywords, class: "form-control" %>
           </div>
           <div class="form-group">
-            <%= f.label :category_id, class: "form-control-label" %>
-            <%= f.collection_select :category_id,
-                                    Category.order(:name),
-                                    :id, :name,
-                                    include_blank: true,
-                                    class: "form-control" %>
+            <%= f.association :category, include_blank: true, prompt: 'Choose a category' %>
           </div>
 
           <div class="form-group">
-            <%= f.label :min_price, class: "form-control-label" %>
-            <%= f.text_field :min_price, class: "form-control" %>
+            <%= f.input :min_price, class: "form-control" %>
           </div>
 
           <div class="form-group">
-            <%= f.label :max_price, class: "form-control-label" %>
-            <%= f.text_field :max_price, class: "form-control" %>
+            <%= f.input :max_price, class: "form-control" %>
           </div>
 
       </div>

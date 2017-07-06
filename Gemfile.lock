@@ -160,6 +160,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    simple_form (3.5.0)
+      actionpack (> 4, < 5.2)
+      activemodel (> 4, < 5.2)
     spoon (0.0.6)
       ffi
     spring (2.0.2)
@@ -215,6 +218,7 @@ DEPENDENCIES
   rails-erd
   rb-fsevent (~> 0.9.8)
   sass-rails (~> 5.0)
+  simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data

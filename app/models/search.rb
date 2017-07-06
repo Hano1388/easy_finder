@@ -1,4 +1,5 @@
 class Search < ApplicationRecord
+  belongs_to :category
 
   def items
     @items ||= find_items

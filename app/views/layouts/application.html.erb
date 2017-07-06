@@ -16,14 +16,20 @@
   </head>
 
   <body>
-    <%= render 'layouts/sidebar.html.erb' %>
-    <div id="flash_message">
-      <% if flash[:notice] %>
-        <div class='alert alert-success'><%= flash[:notice] %></div>
-      <% elsif flash[:alert] %>
-        <div class='alert alert-danger'><%= flash[:alert] %></div>
-      <% end %>
-    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background:skyblue;">
+          <%= render 'layouts/navigation.html.erb' %>
+          <div id="flash_message">
+            <% if flash[:notice] %>
+            <div class='alert alert-success'><%= flash[:notice] %></div>
+            <% elsif flash[:alert] %>
+            <div class='alert alert-danger'><%= flash[:alert] %></div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <%= yield %>
+  </div>
   </body>
 </html>
