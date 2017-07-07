@@ -13,9 +13,9 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item_shelves = Item.find(params['id']).shelves.find_by_store_id(params['store_id'])
-    @store = @item_shelves.store
-    # =========================Search
+    @item = Item.find(params['id'])
+    @itemsShelf = Item.find(params['id']).shelves.find_by_store_id(params['store_id'])
+    @store = Store.find(params['store_id'])
 
   end
 

@@ -21,7 +21,7 @@
  @import "bootstrap";
 
  * {
-   font-family: Sans-serif, Arial, ;
+   font-family: serif, Arial, Sans-serif ;
  }
 
  .row {
@@ -33,7 +33,7 @@
 
  // SHOW HEADERS
  .show-header {
-   background-color: #a98eb0;
+   background-color: #ff9016;
    border-radius: 5px;
    color: white;
    position: relative;
@@ -41,10 +41,11 @@
    width: 100%;
    height: 40px;
    padding: 5px;
+   text-align: center;
  }
   .show-header:hover {
-    background-color: whitesmoke;
-    color: #a98eb0;
+    background-color: #e91e63;
+    color: white;
   }
 
  // SEARCH STYLE
@@ -55,14 +56,29 @@
    background-color: white;
  }
  .search-button {
-   background-color: #a98eb0;
+   background-color: #ff9016;
    color: white;
    border-radius: 5px;
  }
 
   .search-button:hover {
-    background-color: whitesmoke;
-    color: #a98eb0;
+    background-color: #e91e63;
+    color: white;
   }
 
 // End Search styles
+
+// STORES TABLE IN ITEM INDEX STYLES
+.store-link > a {
+  color: 	#1784e2;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.store-link > a:hover{
+  color: 	#ff9016;
+  text-decoration: none;
+  font-size: 18px;
+  
+}
+// END OF STORES TABLE IN ITEM INDEX STYLES
