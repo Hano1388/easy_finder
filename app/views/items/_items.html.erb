@@ -24,12 +24,22 @@
             </tr>
           </thead>
           <tbody>
-            <% item.stores.each do |store| %>
-            <tr>
-              <td><%= link_to store.name, item_store_path(item_id: item.id, store_id: store.id) %></td>
-              <td>Downtown</td>
-            </tr>
+
+            <% if @search.store_id.present? %>
+              <tr>
+                <td><%= link_to @search.store.name, store_item_path(@search.store, item) %></td>
+                <td>Downtown first store</td>
+              </tr>
+              <% else %>
+
+              <% item.stores.each do |store| %>
+                <tr>
+                  <td><%= link_to store.name, store_item_path(store, item) %></td>
+                  <td>Downtown</td>
+                </tr>
+              <% end %>
             <% end %>
+
           </tbody>
         </table>
       </div>
