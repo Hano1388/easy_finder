@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     resources :aisles, only: [:show]
   end
 
+  get '/item/store', to: 'items#store'
+
   resources :items
+
   resources :searches
 end

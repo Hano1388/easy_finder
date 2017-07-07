@@ -2,19 +2,20 @@
 
   <div class="container">
     <% @items.each do |item| %>
-    <div class="row">
+    <div class="row" style="border-radius: 10px;">
+
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <h3>Category: <%= item.category.name %></h3>
-        <h3><%= item.name %></h3>
+        <h4 class="show-header"><%= item.name %></h4><hr />
+        <h4>Category: <%= item.category.name %></h4>
         <p>
           <%= item.description %>
         </p>
-        <img src="https://phillipssewingshop.com/wp-content/uploads/2017/06/FSC_7500_WH240240-1-200x200.jpg" alt="" class="img img-circle img-responsive">
-        <h3>Price: $ <%= item.sale_price %></h3>
+        <img src="http://www.coghlans.com/images/products/products-camp-kitchen-thumb.jpg" alt="" width="70%" style="height: 250px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="img img-responsive">
+        <h4>Price: $ <%= item.sale_price %></h4>
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <h3>Stores</h3>
+        <h4 class="show-header">Stores</h4> <hr />
         <table class="table table-striped">
           <thead>
             <tr>
@@ -25,7 +26,7 @@
           <tbody>
             <% item.stores.each do |store| %>
             <tr>
-              <td><%= link_to store.name %></td>
+              <td><%= link_to store.name, item_store_path(item_id: item.id, store_id: store.id) %></td>
               <td>Downtown</td>
             </tr>
             <% end %>
@@ -34,6 +35,7 @@
       </div>
       <hr />
     </div>
+    <hr />
       <% end %>
 
 

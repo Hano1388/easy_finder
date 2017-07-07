@@ -24,42 +24,45 @@
    font-family: Sans-serif, Arial, ;
  }
 
- // ADVENCED SEARCH BUTTON STYLES
- #advanced-search:hover {
-   background-color: skyblue;
+ .row {
+   margin-left: 0;
+   margin-right: 0;
+   margin-top: 0;
+   margin-bottom: 0;
  }
 
- // END OF ADVANCED SEARCH
-.search-container {
+ // SHOW HEADERS
+ .show-header {
+   background-color: #a98eb0;
+   border-radius: 5px;
+   color: white;
+   position: relative;
+   margin-top: 0px;
+   width: 100%;
+   height: 40px;
+   padding: 5px;
+ }
+  .show-header:hover {
+    background-color: whitesmoke;
+    color: #a98eb0;
+  }
 
-}
- // SIMPLE SEARCH STYLE
-// .simple-search-field {
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-//   width: 90%;
-//   color: #31b0d5;
-//   background-color: white;
-//   border-radius: 10px;
-// }
+ // SEARCH STYLE
+ .search-field {
+   background-color: whitesmoke;
+ }
+ .search-field:hover {
+   background-color: white;
+ }
+ .search-button {
+   background-color: #a98eb0;
+   color: white;
+   border-radius: 5px;
+ }
 
-// .simple-search-field > .simple-search {
-//   border-radius: 20px;
-// }
+  .search-button:hover {
+    background-color: whitesmoke;
+    color: #a98eb0;
+  }
 
-// .simple-search-field  .simple-search-button {
-//   border-radius: 20px;
-// }
- // END OF SIMPLE SEARCH
-
- // .row {
- //   display: flex;
- //   flex-direction: row;
- //   align-items: center;
- //   background-color: whitesmoke;
- // }
-
-// Simple Search styles
-
-    // End of Simple search styles
+// End Search styles

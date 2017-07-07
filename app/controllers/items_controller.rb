@@ -11,6 +11,13 @@ class ItemsController < ApplicationController
     end
   end
 
+  def store
+    @item_shelves = Item.find(params['item_id']).shelves.find_by_store_id(params['store_id'])
+    @store = @item_shelves.store
+    # =========================Search
+
+  end
+
 
   def item_params
     params.require(:item).permit(:name, :description, :sale_price, :category_id)
