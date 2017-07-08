@@ -6,7 +6,18 @@ class Store < ApplicationRecord
   has_many :storeItems, dependent: :nullify
   has_many :items, through: :storeItems
 
+  # validates :province
+  #
+  # before_save :uppercase_province
+  #
+  # def uppercase_province
+  #   province.upcase!
+  # end
+
+  geocoded_by :full_address
+  after_validation :geocode
+
   def full_address
-    "#{street_address}, #{city}, #{province.capitalize} #{postal_code}"
+    "#{street_address}, #{city}, #{province.upcase} #{postal_code}"
   end
 end

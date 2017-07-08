@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :items, only: [:show]
   end
 
+  resources :nearby_stores, only: [:index]
+
   # get '/item/store', to: 'items#store'
 
   resources :items
