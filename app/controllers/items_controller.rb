@@ -17,6 +17,12 @@ class ItemsController < ApplicationController
     @itemsShelf = Item.find(params['id']).shelves.find_by_store_id(params['store_id'])
     @store = Store.find(params['store_id'])
 
+    @hash = Gmaps4rails.build_markers(@store) do |store, marker|
+      marker.lat store.latitude
+      marker.lng store.longitude
+      marker.infowindow store.name
+    end
+
   end
 
 
