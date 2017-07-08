@@ -3,6 +3,8 @@ class Item < ApplicationRecord
 
   # belongs_to :shelf, optional: :true
 
+  validates :name, uniqueness: { case_sensitive: true }
+
   has_many :storeItems, dependent: :nullify
   has_many :stores, through: :storeItems
 

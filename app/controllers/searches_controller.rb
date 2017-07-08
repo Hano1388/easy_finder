@@ -10,7 +10,7 @@ class SearchesController < ApplicationController
 
   def update
     begin
-    @search = Search.find params[:id]
+      @search = Search.find params[:id]
     rescue
         return create
     end
