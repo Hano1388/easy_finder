@@ -15,10 +15,10 @@
         <div class="about-content">
           <div class="row" style="border: inset #2874b4;">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 0px">
-              <img class="img-responsive" src="http://www.tiki-international.com/projects/data1/images/superstore2.jpg" style="width: 100%; height: 150px;" alt="#">
+              <img class="img-responsive" src="http://www.tiki-international.com/projects/data1/images/superstore2.jpg" style="width: 90%; height: 200px;" alt="#">
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding: 0px">
-              <img class="img-responsive" src="https://static.bhphoto.com/images/areaMapImg.png" style="width: 100%; height: 150px;" alt="#">
+              <div id="map" style="width: 100%; height: 200px;"></div>
             </div>
           </div>
           <h3 class="content-title" style="color: #2874b4;">
@@ -95,6 +95,6 @@ markers = handler.addMarkers([
 ]);
 handler.bounds.extendWith(markers);
 handler.fitMapToBounds();
-handler.getMap().setZoom(15);
+handler.getMap().setZoom(17);
 });
 </script>
