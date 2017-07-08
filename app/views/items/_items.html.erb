@@ -20,7 +20,7 @@
           <thead>
             <tr>
               <th>Store Name</th>
-              <th>Location </th>
+              <th>Address</th>
             </tr>
           </thead>
           <tbody>
@@ -28,14 +28,14 @@
             <% if @search.store_id.present? %>
               <tr>
                 <td class="store-link"><%= link_to @search.store.name, store_item_path(@search.store, item) %></td>
-                <td>Downtown first store</td>
+                <td><%= @search.store.full_address %></td>
               </tr>
               <% else %>
 
               <% item.stores.each do |store| %>
                 <tr>
                   <td class="store-link"><%= link_to store.name, store_item_path(store, item) %></td>
-                  <td>Downtown</td>
+                  <td><%= store.full_address %></td>
                 </tr>
               <% end %>
             <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170703053314) do
+ActiveRecord::Schema.define(version: 20170708062117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 20170703053314) do
     t.decimal "max_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "store_id"
+    t.index ["store_id"], name: "index_searches_on_store_id"
   end
 
   create_table "shelf_items", force: :cascade do |t|
@@ -104,15 +106,21 @@ ActiveRecord::Schema.define(version: 20170703053314) do
 
   create_table "stores", force: :cascade do |t|
     t.string "name"
-    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "city"
+    t.string "street_address"
+    t.string "province"
+    t.string "postal_code"
+    t.string "longitude"
+    t.string "latitude"
   end
 
   add_foreign_key "aisles", "stores"
   add_foreign_key "item_reviews", "items"
   add_foreign_key "items", "categories"
   add_foreign_key "rows", "aisles"
+  add_foreign_key "searches", "stores"
   add_foreign_key "shelf_items", "items"
   add_foreign_key "shelf_items", "shelves"
   add_foreign_key "shelves", "rows"

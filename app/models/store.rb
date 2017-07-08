@@ -5,4 +5,8 @@ class Store < ApplicationRecord
 
   has_many :storeItems, dependent: :nullify
   has_many :items, through: :storeItems
+
+  def full_address
+    "#{street_address}, #{city}, #{province.capitalize} #{postal_code}"
+  end
 end

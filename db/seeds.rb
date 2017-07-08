@@ -31,9 +31,9 @@ categories = Category.create([
   #   )
   # end
   stores = Store.create([
-    { name: 'SuperStore'},
-    { name: 'London Drugs'},
-    { name: 'Raxal'},
+    { name: 'SuperStore', street_address: '350 SE Marine Dr', city: 'Vancouver', province: 'BC', postal_code: 'V5X 2S5',},
+    { name: 'London Drugs', street_address: '710 Granville St', city: 'Vancouver', province: 'BC', postal_code: 'V6Z 1E4'},
+    { name: 'Rexall', street_address: '6580 Fraser St', city: 'Vancouver', province: 'BC', postal_code: 'V5X 3T3'},
     ])
 
   counter = (1..20).to_a
@@ -109,7 +109,7 @@ categories = Category.create([
 
       case cat[0].first.name
       when 'Food'
-        fakeName = [Faker::Food.ingredient, Faker::Food.spice, Faker::Food.measurement].sample
+        fakeName = [Faker::Food.ingredient, Faker::Food.spice].sample
       when 'Coffee'
         fakeName = [Faker::Coffee.variety, Faker::Coffee.blend_name, Faker::Coffee.origin].sample
       when 'Beer'
@@ -129,6 +129,7 @@ categories = Category.create([
                   category: actualCategory
     end
   end
+
   # SECOND
   Store.all.each do |store|
     Item.all.each do |item|
