@@ -10,14 +10,13 @@
 <h1>Store Hash: <%= @store.items.first %></h1>
 
 <h1>===================TEST============================</h1> -->
-
 <div class="container">
   <div class="row">
     <div class="col-md-7">
       <div class="row">
-        <hr />
-        <h4 style="text-align: center;">You can find <strong>"<%= @item.name %>"</strong> in <strong>"<%= @store.name %>"</strong> at: Aisle: <strong style="font-size: 20px; border-radius: 5px;"><%= @itemsShelf.row.aisle.aisle_number %></strong> - Row: <strong style="font-size: 20px; border-radius: 5px;"><%= @itemsShelf.row.row_number %></strong> - Shelf: <strong style="font-size: 20px; border-radius: 5px;">
-          <%= @itemsShelf.shelf_number %></strong></h4>
+        <br />
+        <a href="#"><%= @store.name %></a> / <a href="#"></%><%= @item.category.name %></a> / <a href="#"><%= @item.name %></a>
+
         <div><img class="img-responsive" src="http://www.coghlans.com/images/products/products-camp-kitchen-thumb.jpg" style="width: 100%; height: 400px;" alt="#"></div>
         <h3 style="text-align: center;">Price: <%= number_to_currency(@item.price) %></h3>
       </div>
@@ -27,26 +26,45 @@
           <p>
             <%= @item.description %>
           </p><hr />
-          <h5>You can find <strong><%= @item.name %></strong> in <strong><%= @store.name %></strong> at: <strong>Aisle:</strong> #<%= @itemsShelf.row.aisle.aisle_number %> - <strong>Row:</strong> #<%= @itemsShelf.row.row_number %> - <strong>Shelf:</strong> #<%= @itemsShelf.shelf_number %></h5>
-
-          <div class="text-left">
-            <a href="#" class="btn btn-info button" data-selector="Footers">Get Started</a>
-            <a href="#" class="btn btn-success button" data-selector="Footers">Download</a>
-          </div>
         </div>
       </div>
     </div>
     <div class="col-md-5">
       <div class="row">
         <div class="about-content">
-          <h1 class="content-title">Welcome To Eden Builder</h1><hr />
+
+              <h3 class="content-title" style="color: #2874b4;">
+                <strong>
+                  Welcome To <%= @store.name %>
+                </strong>
+              </h3> <hr />
+
+          <h3><%= @item.name %></h3>
+
+          <h3>Price: <%= number_to_currency(@item.price) %></h3>
+
+          <h5>
+            Find <%= @item.name %> at:
+            <table class="table table-responsive">
+              <thead>
+                <tr>
+                  <th style="text-align: center;">Aisle</th>
+                  <th style="text-align: center;">Row</th>
+                  <th style="text-align: center;">Shelf</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="border: groove #2874b4; text-align: center; background-color: whitesmoke;"><strong><%= @itemsShelf.row.aisle.aisle_number %></strong></td>
+                  <td style="border: groove #2874b4; text-align: center; background-color: whitesmoke;"><strong><%= @itemsShelf.row.row_number %></strong></td>
+                  <td style="border: groove #2874b4; text-align: center; background-color: whitesmoke;"><strong><%= @itemsShelf.shelf_number %></strong></td>
+                </tr>
+            </table>
+          </h5>
+
           <p>
             Lorem ipsum dolor sit amet reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Haccusamus terry richardson ad squid. pwolf moon officia aute, non cupidatat skateboard. Wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt cusamus terry richardson ad squid.Lorem ipsum dolor sit amet reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Haccusamus terry richardson ad squid. pwolf moon officia aute, non cupidatat skateboard. Wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt cusamus terry richardson ad squid.
           </p>
-          <div class="text-left">
-            <a href="#" class="btn btn-info button" data-selector="Footers">Get Started</a>
-            <a href="#" class="btn btn-success button" data-selector="Footers">Download</a>
-          </div>
         </div>
       </div><hr />
       <div class="row">

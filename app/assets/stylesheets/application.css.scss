@@ -24,6 +24,15 @@
    font-family: serif, Arial, Sans-serif ;
  }
 
+//  body {
+//     background-image: url('https://ak3.picdn.net/shutterstock/videos/5742956/thumb/1.jpg');
+//     background-position: center center;
+//     background-repeat: no-repeat;
+//     background-attachment:fixed;
+//     background-size: cover;
+//     background-color: #464646;
+// }
+
  .row {
    margin-left: 0;
    margin-right: 0;
@@ -34,7 +43,7 @@
  // SHOW HEADERS
  .show-header {
    background-color: #ff9016;
-   border-radius: 5px;
+  //  border-radius: 5px;
    color: white;
    position: relative;
    margin-top: 0px;
@@ -44,13 +53,14 @@
    text-align: center;
  }
   .show-header:hover {
-    background-color: #e91e63;
+    background-color: #ff5722;
     color: white;
   }
 
  // SEARCH STYLE
  .search-field {
-   background-color: whitesmoke;
+  //  background-color: whitesmoke;
+   border-color: #ff5722 !important;
  }
  .search-field:hover {
    background-color: white;
@@ -58,11 +68,11 @@
  .search-button {
    background-color: #ff9016;
    color: white;
-   border-radius: 5px;
+  //  border-radius: 5px;
  }
 
   .search-button:hover {
-    background-color: #e91e63;
+    background-color: #ff5722;
     color: white;
   }
 
@@ -79,6 +89,6 @@
   color: 	#ff9016;
   text-decoration: none;
   font-size: 18px;
-  
+
 }
 // END OF STORES TABLE IN ITEM INDEX STYLES
