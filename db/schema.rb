@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170707001024) do
+ActiveRecord::Schema.define(version: 20170709013833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20170707001024) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
     t.index ["category_id"], name: "index_items_on_category_id"
   end
 
@@ -115,6 +116,7 @@ ActiveRecord::Schema.define(version: 20170707001024) do
     t.float "latitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "cid"
   end
 
   add_foreign_key "aisles", "stores"

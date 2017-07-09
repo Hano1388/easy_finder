@@ -27,6 +27,10 @@ gem 'rails-erd'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'underscore-rails'
+
+gem 'carrierwave', '~> 1.0'
+gem 'fog'
+gem 'mini_magick'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

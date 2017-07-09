@@ -1,16 +1,14 @@
 class Item < ApplicationRecord
   belongs_to :category
-
   # belongs_to :shelf, optional: :true
-
-  validates :name, uniqueness: { case_sensitive: true }
-
   has_many :storeItems, dependent: :nullify
   has_many :stores, through: :storeItems
 
   has_many :shelfItems, dependent: :nullify
   has_many :shelves, through: :shelfItems
+  mount_uploader :image, ImageUploader
 
+  validates :name, uniqueness: { case_sensitive: true }
 
   def next
     self.class.where("id > ?", id).first

@@ -18,6 +18,6 @@ class Store < ApplicationRecord
   after_validation :geocode
 
   def full_address
-    "#{street_address}, #{city}, #{province.upcase} #{postal_code}"
+    "#{name} #{street_address}, #{city}, #{province.upcase} #{postal_code} Canada"
   end
 end

@@ -9,7 +9,11 @@
           <p>
             <%= item.description %>
           </p>
+          <% if item.image.present? %>
+            <img src="<%= item.image.url %>" style="height: 250px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="img img-responsive" >
+          <% else %>
           <img src="http://www.coghlans.com/images/products/products-camp-kitchen-thumb.jpg" alt="" width="70%" style="height: 250px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="img img-responsive">
+          <% end %>
           <h4>Price: $ <%= item.sale_price %></h4>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">

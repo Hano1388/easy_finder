@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
 
+
   def index
     # @items = Item.all.where(["name ILIKE ?", "%#{params[:search]}%"])
     @search = Search.new
@@ -10,6 +11,17 @@ class ItemsController < ApplicationController
     else
       @items = Item.all.search(params[:search])
     end
+  end
+  
+  def edit
+    @item = Item.find params[:id]
+  end
+
+  def update
+    @item = Item.find params[:id]
+    item_params = params.require(:item).permit([:image])
+    @item.update item_params
+    redirect_to root_path
   end
 
   def show
@@ -22,12 +34,12 @@ class ItemsController < ApplicationController
       marker.lng store.longitude
       marker.infowindow store.name
     end
-
   end
 
 
-  def item_params
-    params.require(:item).permit(:name, :description, :sale_price, :category_id)
-  end
+  # private
+  # def item_params
+  #   params.require(:item).permit(:name, :description, :sale_price, :category_id, :image,)
+  # end
 
 end
