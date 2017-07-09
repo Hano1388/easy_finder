@@ -31,9 +31,9 @@ categories = Category.create([
   #   )
   # end
   stores = Store.create([
-    { name: 'SuperStore', street_address: '350 SE Marine Dr', city: 'Vancouver', province: 'BC', postal_code: 'V5X 2S5',},
-    { name: 'London Drugs', street_address: '710 Granville St', city: 'Vancouver', province: 'BC', postal_code: 'V6Z 1E4'},
-    { name: 'Rexall', street_address: '6580 Fraser St', city: 'Vancouver', province: 'BC', postal_code: 'V5X 3T3'},
+    { name: 'Real Canadian Superstore', street_address: '3185 Grandview Hwy', city: 'Vancouver', province: 'BC', postal_code: 'V5M 2E9', cid: '10572725624240136195'},
+    { name: 'London Drugs', street_address: '710 Granville St', city: 'Vancouver', province: 'BC', postal_code: 'V6Z 1E4', cid: '2324310667074995289'},
+    { name: 'Rexall', street_address: '6580 Fraser St', city: 'Vancouver', province: 'BC', postal_code: 'V5X 3T3', cid: '16809337144179965403'},
     ])
 
   counter = (1..20).to_a

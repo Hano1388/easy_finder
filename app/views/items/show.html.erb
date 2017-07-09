@@ -25,7 +25,13 @@
             <strong>
               <%= @store.name %>
             </strong>
-            <button class="btn btn-primary pull-right">Directions</button>
+
+            <!-- <a target="_blank" jstcache="6" href="https://maps.google.com/maps?ll=49.259089,-123.036501&amp;z=18&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3&amp;cid=10572725624240136195"> <span> View on Google Maps </span> </a> -->
+
+
+            <a target="_blank" jstcache="6" href="https://maps.google.com/maps?ll=<%= @store.latitude %>,<%= @store.longitude %>&amp;z=18&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3&amp;cid=<%= @store.cid %>" class="btn btn-primary pull-right">Directions</a>
+
+            <!-- <button class="btn btn-primary pull-right">Directions</button> -->
             <button class="btn btn-primary pull-right" style="margin-right: 5px;">Website</button>
           </h3> <hr />
           <h5><strong>Address: </strong><%= @store.full_address %></h5>

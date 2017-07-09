@@ -27,6 +27,10 @@ gem 'rails-erd'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'underscore-rails'
+
+gem 'carrierwave', '~> 1.0'
+gem 'fog'
+gem 'mini_magick'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -37,7 +41,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'bootstrap-datepicker-rails'
