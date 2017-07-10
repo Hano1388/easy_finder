@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
 
+  has_many :reviews, dependent: :nullify
+
   validates :first_name, presence: true
       validates :last_name, presence: true
 

@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
       @items = Item.all.search(params[:search])
     end
   end
-  
+
   def edit
     @item = Item.find params[:id]
   end
@@ -25,9 +25,14 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @review = Review.new
+
     @item = Item.find(params['id'])
     @itemsShelf = Item.find(params['id']).shelves.find_by_store_id(params['store_id'])
     @store = Store.find(params['store_id'])
+
+    # Bellow line is to show reviews related to an item for a specific store
+    @reviews = StoreItem.where(store_id: @store.id, item_id: @item.id).first.reviews
 
     @hash = Gmaps4rails.build_markers(@store) do |store, marker|
       marker.lat store.latitude

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170709062236) do
+ActiveRecord::Schema.define(version: 20170710081607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,10 @@ ActiveRecord::Schema.define(version: 20170709062236) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "item_id"
+    t.integer "rating"
+    t.bigint "user_id"
     t.index ["item_id"], name: "index_item_reviews_on_item_id"
+    t.index ["user_id"], name: "index_item_reviews_on_user_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -48,6 +51,17 @@ ActiveRecord::Schema.define(version: 20170709062236) do
     t.datetime "updated_at", null: false
     t.string "image"
     t.index ["category_id"], name: "index_items_on_category_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "body"
+    t.integer "rating"
+    t.bigint "user_id"
+    t.bigint "store_item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["store_item_id"], name: "index_reviews_on_store_item_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "rows", force: :cascade do |t|
@@ -132,7 +146,10 @@ ActiveRecord::Schema.define(version: 20170709062236) do
 
   add_foreign_key "aisles", "stores"
   add_foreign_key "item_reviews", "items"
+  add_foreign_key "item_reviews", "users"
   add_foreign_key "items", "categories"
+  add_foreign_key "reviews", "store_items"
+  add_foreign_key "reviews", "users"
   add_foreign_key "rows", "aisles"
   add_foreign_key "searches", "stores"
   add_foreign_key "shelf_items", "items"

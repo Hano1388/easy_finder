@@ -80,39 +80,31 @@
   </div>
 </div>
 
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div>
-
-<!-- <script>
-handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-markers = handler.addMarkers([
-  {
-    "lat": <%= @store.latitude %>,
-    "lng": <%= @store.longitude %>,
-    "picture": {
-      "url": "https://jgctecnologia.com.br/wp-content/uploads/jgc_pointer-1.png",
-      // "width":  32,
-      // "height": 32
-    },
-    "infowindow": "hello!"
-  }
-]);
-handler.bounds.extendWith(markers);
-handler.fitMapToBounds();
-handler.getMap().setZoom(18);
-});
-</script> -->
-
 <%= render 'maps' %>
 
-<!-- <script>
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers(<%=raw @hash.to_json %>);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-  handler.getMap().setZoom(18);
-  });
-</script> -->
+<!-- CREATING REVIEWS FOR ITEMS -->
+<% if current_user.present? %>
+    <%if @review.errors.any?%>
+      <%= @review.errors.full_messages.join(', ') %>
+    <%end%>
+
+    <% if user_signed_in? %>
+      <%= form_for ([@store, @item, @review]) do |f| %>
+      <div>
+      <%= f.text_area :body %>
+      <%= f.select :rating, [1,2,3,4,5] %>
+      <%= f.submit :review %>
+      </div>
+      <%end%>
+    <%end%>
+<% end %>
+
+<!-- SHOWING ITEM REVIEWS -->
+<% @reviews.each do |review| %>
+  <div>
+    <p><%= review.body %></p>
+  </div>
+  <div>
+    <strong>Rating: <%= review.rating %></strong>
+  </div>
+<% end %>
