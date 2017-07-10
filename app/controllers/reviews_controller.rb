@@ -32,21 +32,20 @@ class ReviewsController < ApplicationController
   # def update
   # end
 
-  # def destroy
-  #   @review = Review.find(params[:id])
-  #   @storeItem= StoreItem.find(params[:id])
-  #   if can? :destroy, @review
-  #     # @storeItem= @review.storeItem
-  #     @review.destroy
-  #     flash[:notice] = 'Review Deleted!'
-  #     # redirect_to storeItem_path(params[:storeItem_id])
-  #     redirect_to @storeItem
-  #   else
-  #     flash[:alert] = 'You can not delete a review, that is not yours'
-  #     # redirect_to @review.storeItem# now since we specified params above we can redirect to @storeItem
-  #     redirect_to @storeItem
-  #   end
-  # end
+  def destroy
+    @review = Review.find(params[:id])
+    @storeItem= StoreItem.find(params[:id])
+    store = Store.find(params[:store_id])
+    item = Item.find(params[:item_id])
+    if current_user == @review.user
+      @review.destroy
+      flash[:notice] = 'Review Deleted!'
+      redirect_to store_item_path(store, item)
+    else
+      flash[:alert] = 'Sorry! You can not delete a review, that is not yours'
+      redirect_to store_item_path(store, item)
+    end
+  end
 
   # def hide
   #   @review = Review.find params[:id]

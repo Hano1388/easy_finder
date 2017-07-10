@@ -107,4 +107,7 @@
   <div>
     <strong>Rating: <%= review.rating %></strong>
   </div>
+  <%= link_to "Delete", [@store, @item, review],
+                    method: :delete,
+                    data: {confirm: 'Are you sure?'} %>
 <% end %>
