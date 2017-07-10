@@ -8,6 +8,22 @@
 
         <div class="picture"><img class="img-responsive" src="http://www.coghlans.com/images/products/products-camp-kitchen-thumb.jpg" style="width: 80%; height: 300px;" alt="#"></div>
         <h3 style="text-align: center;">Price: <%= number_to_currency(@item.price) %></h3>
+        <%= render './reviews/reviewForm' %>
+
+        <div class="row">
+          <!-- SHOWING ITEM REVIEWS -->
+          <!-- <% @reviews.each do |review| %>
+            <div>
+              <p><%= review.body %></p>
+            </div>
+            <div>
+              <strong>Rating: <%= review.rating %></strong>
+            </div>
+            <%= link_to "Delete", [@store, @item, review],
+                              method: :delete,
+                              data: {confirm: 'Are you sure?'} %>
+          <% end %> -->
+        </div>
       </div>
     </div>
     <div class="col-md-5">
@@ -81,33 +97,8 @@
 </div>
 
 <%= render 'maps' %>
+<%= render './reviews/reviewShow' %>
+<!-- //////////// Javascript reviews -->
+<!-- <#%= render './reviews/review' %> -->
 
-<!-- CREATING REVIEWS FOR ITEMS -->
-<% if current_user.present? %>
-    <%if @review.errors.any?%>
-      <%= @review.errors.full_messages.join(', ') %>
-    <%end%>
-
-    <% if user_signed_in? %>
-      <%= form_for ([@store, @item, @review]) do |f| %>
-      <div>
-      <%= f.text_area :body %>
-      <%= f.select :rating, [1,2,3,4,5] %>
-      <%= f.submit :review %>
-      </div>
-      <%end%>
-    <%end%>
-<% end %>
-
-<!-- SHOWING ITEM REVIEWS -->
-<% @reviews.each do |review| %>
-  <div>
-    <p><%= review.body %></p>
-  </div>
-  <div>
-    <strong>Rating: <%= review.rating %></strong>
-  </div>
-  <%= link_to "Delete", [@store, @item, review],
-                    method: :delete,
-                    data: {confirm: 'Are you sure?'} %>
-<% end %>
+<!-- //////////// Javascript reviews -->

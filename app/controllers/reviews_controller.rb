@@ -47,13 +47,6 @@ class ReviewsController < ApplicationController
     end
   end
 
-  # def hide
-  #   @review = Review.find params[:id]
-  #   # @review.save
-  #   @review.update(hidden: !@review.hidden)
-  #   redirect_to @review.storeItem
-  # end
-
   private
 
   def find_review
