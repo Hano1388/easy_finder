@@ -7,6 +7,6 @@
       <p style="color: black;">
         <%= review.body %>
       </p>
-      <a class="btn btn-sm btn-danger"data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/stores/<%= review.store_item.store_id %>/items/<%= review.store_item.item_id %>/reviews/<%= review.id %>">Delete</a>
+      <a class="btn btn-sm btn-danger"data-confirm="Are you sure?" data-remote="true" rel="nofollow" data-method="delete" href="/stores/<%= review.store_item.store_id %>/items/<%= review.store_item.item_id %>/reviews/<%= review.id %>">Delete</a>
     </blockquote>
   </div>

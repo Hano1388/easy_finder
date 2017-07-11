@@ -70,14 +70,17 @@ class ReviewsController < ApplicationController
     @storeItem= StoreItem.find(params[:id])
     store = Store.find(params[:store_id])
     item = Item.find(params[:item_id])
-    
+
     if current_user == @review.user
       @review.destroy
-      flash[:notice] = 'Review Deleted!'
-      redirect_to store_item_path(store, item)
+      flash_message :notice, 'Review Deleted!'
     else
-      flash[:alert] = 'Sorry! You can not delete a review, that is not yours'
-      redirect_to store_item_path(store, item)
+      flash_message :alert, 'Sorry! You can not delete a review, that is not yours'
+    end
+    
+    respond_to do |format|
+      format.html { redirect_to store_item_path(store, item) }
+      format.js { render }
     end
   end
 

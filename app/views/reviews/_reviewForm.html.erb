@@ -8,7 +8,7 @@
 
         <div class="row" id="post-review-box" style="display:none;">
           <div class="col-md-12">
-					<form class="new_review" id="new_review" action="/stores/<%= @store.id %>/items/<%= @item.id %>/reviews" accept-charset="UTF-8" data-remote="true" method="post">
+					<form class="new_review" id="new_review_form" action="/stores/<%= @store.id %>/items/<%= @item.id %>/reviews" accept-charset="UTF-8" data-remote="true" method="post">
             <input name="utf8" type="hidden" value="✓">
             <input type="hidden" name="authenticity_token" value="Or5hKTIGcijDUsVh1MaWMrPKaw+KxF8HWaQxSCwRxy7v5jwLijwuDP0F5rdHZzTn4zl069PyXoHulysQ5gmWvQ==">
             <input id="ratings-hidden" name="review[rating]" value="1" type="hidden">
