@@ -1,0 +1,46 @@
+<div class="row singleItem_<%= item.id %>" style="border-radius: 10px;">
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <h4 class="show-header"><%= item.name %></h4><hr />
+    <h4>Category: <%= item.category.name %></h4>
+    <p>
+      <%= item.description %>
+    </p>
+    <% if item.image.present? %>
+      <img src="<%= item.image.url %>" style="height: 250px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="img img-responsive" >
+    <% else %>
+    <img src="http://www.coghlans.com/images/products/products-camp-kitchen-thumb.jpg" alt="" width="70%" style="height: 250px; border-top-right-radius: 20px; border-bottom-right-radius: 20px;" class="img img-responsive">
+    <% end %>
+    <h4>Price: $ <%= item.sale_price %></h4>
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <h4 class="show-header">Stores</h4> <hr />
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Store Name</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% if @search.store_id.present? %>
+          <tr>
+            <td class="store-link"><%= link_to @search.store.name, store_item_path(@search.store, item) %></td>
+            <td><%= @search.store.full_address %></td>
+          </tr>
+          <% else %>
+
+          <% item.stores.each do |store| %>
+            <tr>
+              <td class="store-link"><%= link_to store.name, store_item_path(store, item) %></td>
+              <td><%= store.full_address %></td>
+            </tr>
+          <% end %>
+        <% end %>
+
+      </tbody>
+    </table>
+  </div>
+  <hr />
+</div>
+<hr />
