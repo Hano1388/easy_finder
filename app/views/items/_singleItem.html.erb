@@ -1,6 +1,6 @@
-<div class="row singleItem_<%= item.id %>" style="border-radius: 10px;">
+<div class="row singleItem" style="border-radius: 10px;">
   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-    <h4 class="show-header"><%= item.name %></h4><hr />
+    <h4 class="item-header"><%= item.name %></h4><hr />
     <h4>Category: <%= item.category.name %></h4>
     <p>
       <%= item.description %>
@@ -13,7 +13,7 @@
     <h4>Price: $ <%= item.sale_price %></h4>
   </div>
   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-    <h4 class="show-header">Stores</h4> <hr />
+    <h4 class="item-header">Stores</h4> <hr />
     <table class="table table-striped">
       <thead>
         <tr>
@@ -43,4 +43,3 @@
   </div>
   <hr />
 </div>
-<hr />

@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
       @search = Search.find(params[:search_id])
       @items = @search.items
     else
-      @items = Item.all.search(params[:search])
+      @items = Item.all.search(params[:search]).limit(10)
     end
   end
 
