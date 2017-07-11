@@ -8,10 +8,10 @@ class SearchesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to items_path(search_id: @search.id) }
-      format.js {
+      format.js do
         @items = @search.items
         render
-      }
+      end
     end
 
   end
@@ -20,7 +20,7 @@ class SearchesController < ApplicationController
   #   @search = Search.create!(search_params)
   #   redirect_to items_path(search_id: @search.id)
   # end
-
+  #
 
   def update
     begin
@@ -36,6 +36,25 @@ class SearchesController < ApplicationController
     end
   end
 
+  # def update
+  #   begin
+  #     @search = Search.find params[:id]
+  #   rescue
+  #       return create
+  #   end
+  #
+  #   if @search.update(search_params)
+  #     respond_to do |format|
+  #       render.html { redirect_to items_path(search_id: @search.id) }
+  #       render.js { render }
+  #     end
+  #   else
+  #     respond_to do |format|
+  #       render.html { redirect_to items_path }
+  #       render.js { render }
+  #     end
+  #   end
+  # end
 
   def show
     @search = Search.find(params[:id])
