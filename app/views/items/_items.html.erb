@@ -2,6 +2,6 @@
 
   <div class="container" id="searchResults">
     <% @items.each do |item| %>
-    <%= render 'singleItem', item: item %>
+    <%= render '/items/singleItem', item: item %>
     <% end %>
   </div>
