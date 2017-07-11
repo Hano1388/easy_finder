@@ -12,6 +12,20 @@ class ReviewsController < ApplicationController
   def edit
   end
 
+#   def update
+#   if @ticket.update ticket_params
+#     flash[:notice] = 'Ticket updated.'
+#   else
+#     flash[:notice] = 'Unable to updated ticket.'
+#   end
+#   # @properties = Property.where(user: current_user)
+#   @ticket_id = params[:id]
+#   respond_to do |format|
+#     format.html { redirect_to root_path }
+#     format.js { render }
+#   end
+# end
+
   def create
     @review = Review.new(review_params)
     store = Store.find(params[:store_id])
@@ -21,13 +35,32 @@ class ReviewsController < ApplicationController
     @review.user = current_user
 
     if @review.save
-       flash[:notice] = "Review Created"
-       redirect_to store_item_path(store, item)
+       flash_message :notice, "Review Created"
     else
-      flash[:alert] = "Problem creating review"
-      redirect_to store_item_path(store, item)
+      flash_message :alert, "Problem creating review"
+    end
+    respond_to do |format|
+      format.html { redirect_to store_item_path(store, item) }
+      format.js { render }
     end
   end
+
+  # def create
+  #   @review = Review.new(review_params)
+  #   store = Store.find(params[:store_id])
+  #   item = Item.find(params[:item_id])
+  #   @storeItem = StoreItem.where(item_id: item.id, store_id: store.id).first
+  #   @review.store_item = @storeItem
+  #   @review.user = current_user
+  #
+  #   if @review.save
+  #      flash[:notice] = "Review Created"
+  #      redirect_to store_item_path(store, item)
+  #   else
+  #     flash[:alert] = "Problem creating review"
+  #     redirect_to store_item_path(store, item)
+  #   end
+  # end
 
   # def update
   # end
@@ -37,6 +70,7 @@ class ReviewsController < ApplicationController
     @storeItem= StoreItem.find(params[:id])
     store = Store.find(params[:store_id])
     item = Item.find(params[:item_id])
+    
     if current_user == @review.user
       @review.destroy
       flash[:notice] = 'Review Deleted!'
@@ -47,6 +81,21 @@ class ReviewsController < ApplicationController
     end
   end
 
+  # def destroy
+  #   @review = Review.find(params[:id])
+  #   @storeItem= StoreItem.find(params[:id])
+  #   store = Store.find(params[:store_id])
+  #   item = Item.find(params[:item_id])
+  #   if current_user == @review.user
+  #     @review.destroy
+  #     flash[:notice] = 'Review Deleted!'
+  #     redirect_to store_item_path(store, item)
+  #   else
+  #     flash[:alert] = 'Sorry! You can not delete a review, that is not yours'
+  #     redirect_to store_item_path(store, item)
+  #   end
+  # end
+
   private
 
   def find_review
@@ -56,4 +105,5 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:rating, :body)
   end
+
 end

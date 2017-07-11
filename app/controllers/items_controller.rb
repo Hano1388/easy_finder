@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
     @store = Store.find(params['store_id'])
 
     # Bellow line is to show reviews related to an item for a specific store
-    @reviews = StoreItem.where(store_id: @store.id, item_id: @item.id).first.reviews
+    @reviews = StoreItem.where(store_id: @store.id, item_id: @item.id).first.reviews.order(created_at: :DESC)
 
     @hash = Gmaps4rails.build_markers(@store) do |store, marker|
       marker.lat store.latitude

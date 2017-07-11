@@ -8,38 +8,37 @@
 
         <div class="row" id="post-review-box" style="display:none;">
           <div class="col-md-12">
-            <form class="new_review" id="new_review" action="/stores/<%= @store.id %>/items/<%= @item.id %>/reviews" accept-charset="UTF-8" action="" method="post">
-              <input name="utf8" type="hidden" value="✓">
-              <input type="hidden" name="authenticity_token" value="Or5hKTIGcijDUsVh1MaWMrPKaw+KxF8HWaQxSCwRxy7v5jwLijwuDP0F5rdHZzTn4zl069PyXoHulysQ5gmWvQ==">
-              <input id="ratings-hidden" name="review[rating]" value="1" type="hidden">
-              <textarea class="form-control animated" cols="50" id="new-review" name="review[body]" placeholder="Enter your review here..." rows="5"></textarea>
-              <div class="text-right">
-                <div class="stars starrr" data-rating="0"></div>
-                <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
-                <span class="glyphicon glyphicon-remove"></span>Cancel</a>
-                <button class="btn btn-success btn-sm" type="submit" data-disable-with="review">Save Review</button>
-              </div>
-            </form>
+					<form class="new_review" id="new_review" action="/stores/<%= @store.id %>/items/<%= @item.id %>/reviews" accept-charset="UTF-8" data-remote="true" method="post">
+            <input name="utf8" type="hidden" value="✓">
+            <input type="hidden" name="authenticity_token" value="Or5hKTIGcijDUsVh1MaWMrPKaw+KxF8HWaQxSCwRxy7v5jwLijwuDP0F5rdHZzTn4zl069PyXoHulysQ5gmWvQ==">
+            <input id="ratings-hidden" name="review[rating]" value="1" type="hidden">
+            <textarea class="form-control animated" cols="50" id="new-review" name="review[body]" placeholder="Enter your review here..." rows="5"></textarea>
+            <div class="text-right">
+              <div class="stars starrr" data-rating="0"></div>
+              <a class="btn btn-danger btn-sm" href="#" id="close-review-box" style="display:none; margin-right: 10px;">
+              <span class="glyphicon glyphicon-remove"></span>Cancel</a>
+							<button class="btn btn-success btn-sm" type="submit" data-disable-with="review">Save Review</button>
+            </div>
+          </form>
           </div>
         </div>
       </div>
-        <%= render './reviews/reviewShow' %>
 		</div>
 	</div>
 </div>
 
-<!-- CREATING REVIEWS FOR ITEMS -->
+
 <!-- <% if current_user.present? %>
     <%if @review.errors.any?%>
       <%= @review.errors.full_messages.join(', ') %>
     <%end%>
 
     <% if user_signed_in? %>
-      <%= form_for ([@store, @item, @review]) do |f| %>
+      <%= form_for [@store, @item, @review], remote: true do |f| %>
       <div>
       <%= f.text_area :body %>
       <%= f.select :rating, [1,2,3,4,5] %>
-      <%= f.submit :review %>
+      <%= f.submit :review  %>
       </div>
       <%end%>
     <%end%>
