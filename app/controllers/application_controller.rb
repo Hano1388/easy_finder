@@ -19,5 +19,13 @@ class ApplicationController < ActionController::Base
       redirect_to new_session_path, notice: 'Please Sign in!'
     end
   end
-  
+
+  def flash_message(type, message)
+    if request.format.js?
+      flash.now[type] = message
+    else
+      flash[type] = message
+    end
+  end
+
 end

@@ -1,0 +1,19 @@
+  <!-- <div class="reviews">
+    <% @reviews.each do |review| %>
+  	<div class="active item">
+      <blockquote>
+        <span class="reviews-writer"><strong><%= review.user.first_name %></strong> Rating: <%= review.rating %></span>
+        <p>
+          <%= review.body %>
+        </p>
+        <a class="btn btn-sm btn-danger"data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/stores/<%= review.store_item.store_id %>/items/<%= review.store_item.item_id %>/reviews/<%= review.id %>">Delete</a>
+      </blockquote>
+    </div>
+    <% end %>
+  </div> -->
+
+  <div class="reviews">
+    <% @reviews.each do |review| %>
+    <%= render './reviews/reviewSingle', review: review %>
+    <% end %>
+  </div>

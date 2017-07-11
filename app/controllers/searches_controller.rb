@@ -2,11 +2,25 @@ class SearchesController < ApplicationController
   def new
     @search = Search.new
   end
-
+  #
   def create
     @search = Search.create!(search_params)
-    redirect_to items_path(search_id: @search.id)
+
+    respond_to do |format|
+      format.html { redirect_to items_path(search_id: @search.id) }
+      format.js {
+        @items = @search.items
+        render
+      }
+    end
+
   end
+
+  # def create
+  #   @search = Search.create!(search_params)
+  #   redirect_to items_path(search_id: @search.id)
+  # end
+
 
   def update
     begin

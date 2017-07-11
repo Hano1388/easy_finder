@@ -1,0 +1,12 @@
+  <div class="active item_<%= review.id %>">
+    <blockquote>
+      <span class="reviews-writer"><strong style="color: Black"><%= review.user.first_name.capitalize %></strong>
+        <% review.rating.times do %>
+        <span class="glyphicon .glyphicon-star-empty glyphicon-star pull-right"></span>
+        <% end %>
+      <p style="color: black;">
+        <%= review.body %>
+      </p>
+      <a class="btn btn-sm btn-danger"data-confirm="Are you sure?" data-remote="true" rel="nofollow" data-method="delete" href="/stores/<%= review.store_item.store_id %>/items/<%= review.store_item.item_id %>/reviews/<%= review.id %>">Delete</a>
+    </blockquote>
+  </div>

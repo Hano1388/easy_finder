@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :stores do
     resources :aisles, only: [:show]
-    resources :items, only: [:show]
+    resources :items, only: [:show] do
+      resources :reviews, only: [:create, :destroy]
+    end
   end
 
 
