@@ -19,7 +19,8 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
+    <%= render 'layouts/navbar' %>
+    <!-- <% if user_signed_in? %>
     Hello <%= current_user.first_name %>
 
     <%= link_to 'Sign Out', sessions_path, method: :delete  %>
@@ -28,7 +29,8 @@
     <%= link_to 'Sign In', new_session_path %>
     |
     <%= link_to 'Sign Up', new_user_path %>
-    <% end %>
+    <% end %> -->
+
 
     <div class="container">
       <div class="row">

@@ -1,3 +1,87 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// STORES TABLE IN ITEM INDEX STYLES
+.store-link > a {
+  color: 	rgb(111, 84, 153) ;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.store-link > a:hover{
+  color: 	#ff9016;
+  text-decoration: none;
+  font-size: 18px;
+}
+.item-header {
+  text-align: center;
+  font-weight: bold;
+}
+// END OF STORES TABLE IN ITEM INDEX STYLES
+
+// ITEM PICTURE STYLE
+
+
+/**THE SAME CSS IS USED IN ALL 3 DEMOS**/
+/**gallery margins**/
+.picture img{
+-webkit-transition: all 0.35s ease-in-out;
+-moz-transition: all 0.35s ease-in-out;
+transition: all 0.35s ease-in-out;
+cursor: -webkit-zoom-in;
+cursor: -moz-zoom-in;
+cursor: zoom-in;
+}
+
+.picture img:hover,
+.picture img:active,
+.picture img:focus {
+/**adjust scale to desired size,
+add browser prefixes**/
+-ms-transform: scale(1.1);
+-moz-transform: scale(1.1);
+-webkit-transform: scale(1.1);
+-o-transform: scale(1.1);
+transform: scale(1.1);
+position:relative;
+margin-left: 10%;
+margin-top: 10%;
+z-index:100;
+}
+
+/**To keep upscaled images visible on mobile,
+increase left & right margins a bit**/
+@media only screen and (max-width: 768px) {
+.picture {
+margin-left: 15vw;
+margin-right: 15vw;
+}
+
+/**TIP: Easy escape for touch screens,
+give gallery's parent container a cursor: pointer.**/
+.DivName {cursor: pointer}
+}
+
+// END OF ITEM PICTURE STYLE
+
+// SEARCH STYLE
+.search-field {
+ //  background-color: whitesmoke;
+  border-color: #ff5722 !important;
+}
+.search-field:hover {
+  background-color: white;
+}
+.search-button {
+  background-color: #ff9016;
+  color: white;
+ //  border-radius: 5px;
+}
+
+ .search-button:hover {
+   background-color: #ff5722;
+   color: white;
+ }
+
+// End Search styles
