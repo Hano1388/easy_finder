@@ -44,10 +44,7 @@ class ItemsController < ApplicationController
       marker.lng store.longitude
       marker.infowindow store.name
     end
-
-    # below line should be fixed it's a hack for navbar
-    # @search = Search.new
-
+    
   end
 
 

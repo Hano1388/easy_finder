@@ -27,6 +27,7 @@
           <li><a href="/users/new">Sign Up</a></li>
           <% end %>
           <li>
+            <% if @search.present? %>
             <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse1" aria-expanded="false" aria-controls="nav-collapse1">Search</a>
           </li>
         </ul>
@@ -50,6 +51,7 @@
           <li><a href="#">Motion</a></li>
           <li><a href="#">Mobile apps</a></li> -->
         </ul>
+        <% end %>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->
   </nav><!-- /.navbar -->
