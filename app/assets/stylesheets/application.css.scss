@@ -21,16 +21,12 @@
 
  * {
    font-family: serif, Arial, Sans-serif ;
+  //  color: rgb(111, 84, 153) !important;
  }
 
-//  body {
-//     background-image: url('https://ak3.picdn.net/shutterstock/videos/5742956/thumb/1.jpg');
-//     background-position: center center;
-//     background-repeat: no-repeat;
-//     background-attachment:fixed;
-//     background-size: cover;
-//     background-color: #464646;
-// }
+ body {
+     background-color: #e7f3ff;
+}
 
  .row {
    margin-left: 0;
@@ -39,120 +35,145 @@
    margin-bottom: 0;
  }
 
- // SHOW HEADERS
-  .singleItem {
-    border-top: ridge rgb(111, 84, 153) !important;
-    // border-bottom: inset rgb(111, 84, 153);
-    border-radius: 50px;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    width: 100%;
-    // margin-left: calc(2% / 2);
-    // margin-right: calc(2% / 2);
-  }
-
-  tr {
-    // border-bottom: 2px rgb(111, 84, 153);
-    background-color: whitesmoke;
-  }
-
-
-
-
 
 // NAVBAR STYLES
 // .navbar-brand { position: relative; z-index: 2; }
 .navbar-brand {
-  color: rgb(111, 84, 153) !important;
+  color: #e7f3ff !important;
+  // font-weight: bold !important;
+  font-variant: small-caps !important;
+  font-stretch: ultra-expanded !important;
+  font-size: 24px !important;
 }
 
 nav {
+  // background-color: red !important;
+  background-color: #de6221 !important;
   border-style: ridge !important;
-  // border-bottom: rgb(111, 84, 153) !important;
-  // border-top: rgb(111, 84, 153) !important;
-  border-radius: 30px !important;
-  color: rgb(111, 84, 153) !important;
+
+  // border-bottom-left-radius: 40px !important;
+  // border-bottom-right-radius: 40px !important;
+  position: fixed !important;
+  z-index: 999 !important;
+  width: 100% !important;
+
 }
 
 #hamburger-button {
-  border-radius: 30px;
-}
-#hamburger-button:hover {
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
   background-color: white;
 }
-
-// MAIN CONTAINER
-.main-container {
-  margin-top: -20px;
-  // border-top: groove rgb(111, 84, 153) !important;
-  // border-bottom: groove rgb(111, 84, 153) !important;
-  // border-radius: 50px;
+#hamburger-button:hover {
+  background-color: #e7f3ff;
 }
 
 // MAIN SEARCH BUTTON ON THE RIGHT
-.navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }
+.navbar-nav.navbar-right .btn {
+  position: relative;
+  z-index: 2;
+  padding: 4px 20px;
+   margin: 10px auto;
+   transition: transform 0.3s;
+ }
 
+
+// NAVBAR LINKS
 .navbar-nav > li > a {
-  color: rgb(111, 84, 153) !important;
+  color: #e7f3ff !important;
+  font-weight: bold !important;
+  font-variant: small-caps !important;
+  font-size: 17px !important;
 }
+
+.navbar-nav > li > a:hover {
+  color: yellow !important;
+}
+
 // STYLES TO NOT LET THE BRAND DISAPPEAR WHILE TOGGLING SEARCHES
-.navbar .navbar-collapse { position: relative; overflow: hidden !important; }
+.navbar .navbar-collapse {
+  position: relative;
+  overflow: hidden !important;
+}
 
 // STYLES TO MAKE THE CLOSEST NAVBAR CHILD HAVE A PADDING WITH SEARCH BUTTON
 .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
 
 // STYLES TO COLLAPSE SEARCH FORM AND HIDDING THE LINKS
 .navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
-.navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }
+.navbar.navbar-default .nav-collapse { background-color: transparent; }
 
 .navbar.navbar-inverse .nav-collapse { background-color: #222; }
 .navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }
 .nav-collapse>li { float: right; }
 
 // MAIN SEARCH BUTTON STYLES
-.btn.btn-circle { border-radius: 50px; }
-.btn.btn-outline { background-color: transparent; }
+.btn.btn-circle {
+  // border-radius: 50px;
+}
+.btn.btn-outline {
+  background-color: white;
+  border-radius: 50px;
+  color: #de6221 !important;
+}
 
 
 .navbar-nav.navbar-right .btn:not(.collapsed) {
-    background-color: rgb(111, 84, 153);
-    border-color: rgb(111, 84, 153);
-    color: rgb(255, 255, 255) !important;
+    background-color: white;
+    border-color: yellow;
+    color:  #de6221 !important;
+}
+.navbar-nav.navbar-right .btn.collapsed {
+    background-color: white;
+    border-color: yellow;
+    color:  #de6221 !important;
 }
 
 .navbar-nav.navbar-right .btn:not(.collapsed):hover {
-    background-color: rgb(255, 255, 255);
-    border-color: rgb(111, 84, 153);
-    color: rgb(111, 84, 153) !important;
+    background-color: yellowgreen;
+    border-color: yellow;
+    color: black !important;
+    font-weight: 200;
 }
 
 .navbar-nav.navbar-right .btn.collapsed:hover {
-  background-color: rgb(111, 84, 153);
-  border-color: rgb(111, 84, 153);
-  color: rgb(255, 255, 255) !important;
+  background-color: yellowgreen;
+  border-color: yellow;
+  color: black !important;
+  font-weight: 200;
 }
 // End of main search button styles
 
 // Search inputs styles
 ul form .search-button:not(.collapsed) {
-    background-color: rgb(111, 84, 153);
-    border-color: rgb(111, 84, 153);
+    border-color: yellow;
     color: rgb(255, 255, 255);
+    font-weight: bold;
     border-radius: 50px !important;
 }
 
 ul form .search-button:not(.collapsed):hover {
-    background-color: rgb(255, 255, 255);
+    background-color: yellowgreen;
     border-color: rgb(111, 84, 153);
-    color: rgb(111, 84, 153);
+    color: black !important;
+    font-weight: 200;
 }
 
 ul form .search-field:not(.collapsed) {
     // background-color: rgb(111, 84, 153);
-    border-color: rgb(111, 84, 153) !important;
+    border-color: yellow !important;
     color: rgb(111, 84, 153) !important;
     font-weight: 400 !important;
     border-radius: 50px !important;
+}
+
+ul form .search-field:not(.collapsed):focus {
+    background-color: whitesmoke !important;
+    border: ridge yellow !important;
+}
+ul form .search-field:not(.collapsed):hover {
+    background-color: whitesmoke !important;
+    border: ridge yellow !important;
 }
 // End of search inputs styles
 
@@ -210,3 +231,38 @@ ul form .search-field:not(.collapsed) {
     }
 }
 // END OF NAVBAR STYLES
+
+// MAIN CONTAINER
+.main-container {
+  margin-top: 50px;
+  border-top: groove #de6221;
+  border-radius: 50px;
+
+  // border-style: ridge !important;
+  // border-top: ridge;
+  // border-top-left-radius: 30px !important;
+  // border-top-right-radius: 30px !important;
+  // border-top: groove rgb(111, 84, 153) !important;
+  // border-bottom: groove rgb(111, 84, 153) !important;
+  // border-radius: 50px;
+}
+// SHOW HEADERS
+ .singleItem {
+   border-bottom: ridge #de6221 !important;
+   // border-bottom: inset rgb(111, 84, 153);
+   border-radius: 50px;
+   margin-top: 0px;
+   margin-bottom: 10px;
+   width: 100%;
+   // margin-left: calc(2% / 2);
+   // margin-right: calc(2% / 2);
+ }
+ // .store-table{
+ //   background-color: white !important;
+ // }
+
+ tr {
+   // border-bottom: 2px rgb(111, 84, 153);
+  //  background-color: whitesmoke;
+  // color: white !important;
+ }

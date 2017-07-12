@@ -6,7 +6,13 @@
         <br />
         <a href="#"><%= @store.name %></a> / <a href="#"></%><%= @item.category.name %></a> / <a href="#"><%= @item.name %></a>
 
-        <div class="picture"><img class="img-responsive" src="http://www.coghlans.com/images/products/products-camp-kitchen-thumb.jpg" style="width: 80%; height: 300px;" alt="#"></div>
+        <div class="picture">
+          <% if @item.image.present? %>
+            <img class="img-responsive" src="<%= @item.image.url %>" style="width: 80%; height: 300px;" alt="#">
+          <% else %>
+            <img class="img-responsive" src="http://www.coghlans.com/images/products/products-camp-kitchen-thumb.jpg" style="width: 80%; height: 300px;" alt="#">
+          <% end %>
+        </div>
         <h3 style="text-align: center;">Price: <%= number_to_currency(@item.price) %></h3>
         <%= render './reviews/reviewForm' %>
           <%= render './reviews/reviewShow' %>
