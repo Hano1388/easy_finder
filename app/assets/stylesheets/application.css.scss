@@ -26,6 +26,10 @@
 
  body {
      background-color: #e7f3ff;
+    //  border-left: 40px;
+    //  border-left-color: #de6221;
+    //  border-right: 40px #de6221;
+    //  border-right-color: #de6221;
 }
 
  .row {
@@ -46,18 +50,125 @@
   font-size: 24px !important;
 }
 
-nav {
+header > nav {
   // background-color: red !important;
   background-color: #de6221 !important;
   border-style: ridge !important;
 
-  // border-bottom-left-radius: 40px !important;
-  // border-bottom-right-radius: 40px !important;
+  border-bottom-left-radius: 100px !important;
+  border-bottom-right-radius: 100px !important;
   position: fixed !important;
   z-index: 999 !important;
   width: 100% !important;
 
 }
+
+// Footer
+footer > nav {
+  background-color: transparent !important;
+
+  border-radius: 50px !important;
+  position: fixed !important;
+  z-index: 999 !important;
+  width: 80% !important;
+  // border-bottom: 5px;
+  // border-bottom: ridge #e7f3ff !important;
+}
+
+ul.social-network {
+	list-style: none;
+	// display: inline;
+	// margin-left:0 !important;
+	padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+ul.social-network li {
+  margin-top: 20px;
+	// display: inline;
+	// margin: 0 5px;
+}
+
+
+/* footer social icons */
+.social-network a.icoRss:hover {
+	background-color: #F56505;
+}
+.social-network a.icoFacebook:hover {
+	background-color:#3B5998;
+}
+.social-network a.icoTwitter:hover {
+	background-color:#33ccff;
+}
+.social-network a.icoGoogle:hover {
+	background-color:#BD3518;
+}
+.social-network a.icoVimeo:hover {
+	background-color:#0590B8;
+}
+.social-network a.icoLinkedin:hover {
+	background-color:#007bb7;
+}
+
+.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+	color:#fff;
+}
+a.socialIcon:hover, .socialHoverClass {
+	color:#44BCDD;
+}
+
+.social-circle li a {
+	display:inline-block;
+	position:relative;
+	margin:0 auto 0 auto;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius:50%;
+	text-align:center;
+	width: 50px;
+	height: 50px;
+	font-size:20px;
+}
+.social-circle li i {
+	margin:0;
+	line-height:50px;
+	text-align: center;
+}
+
+.social-circle li a:hover i, .triggeredHover {
+	-moz-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-ms--transform: rotate(360deg);
+	transform: rotate(360deg);
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.social-circle i {
+	color: #fff;
+	-webkit-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	-o-transition: all 0.8s;
+	-ms-transition: all 0.8s;
+	transition: all 0.8s;
+}
+
+footer nav ul a {
+  background-color: #de6221;
+  // background-color: yellowgreen;
+  // background-color: #e7f3ff;
+ // background-color: #D3D3D3;
+}
+
+
+
+
+// FOOTER STYLES END HERE
 
 #hamburger-button {
   border-bottom-right-radius: 25px;
@@ -232,11 +343,42 @@ ul form .search-field:not(.collapsed):hover {
 }
 // END OF NAVBAR STYLES
 
+
+
 // MAIN CONTAINER
+.main-container-holder {
+  width: 100%;
+  // margin-top: 50px;
+  // border-top: groove #de6221;
+
+  // border-top-left-radius: 50px;
+  // border-top-right-radius: 50px;
+  // border-radius: 50px;
+
+  border-left-style: solid;
+  border-left-width: 50px;
+  border-left-color: whitesmoke;
+
+  border-right-style: solid;
+  border-right-width: 50px;
+  border-right-color: whitesmoke;
+}
 .main-container {
+  width: 100%;
   margin-top: 50px;
   border-top: groove #de6221;
-  border-radius: 50px;
+
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+
+  // border-left-style: solid;
+  // border-left-width: 100px;
+  // border-left-color: #de6221;
+  //
+  // border-right-style: solid;
+  // border-right-width: 100px;
+  // border-right-color: #de6221;
+
 
   // border-style: ridge !important;
   // border-top: ridge;

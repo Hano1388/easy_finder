@@ -171,6 +171,31 @@ categories = Category.create([
     end
   end
 
+
+  10.times do
+    name = Faker::Name.first_name
+    User.create(
+    first_name: name,
+      last_name:Faker::Name.last_name,
+      email: "#{name}@gmail.com",
+      is_admin?: false,
+      password: 'hano',
+      password_confirmation: 'hano',
+    )
+  end
+
+  StoreItem.all.each do |sItem|
+    user = User.find(rand(1..User.count))
+        Review.create(
+          body: Faker::Hipster.paragraph,
+          rating: rand(1..5),
+          user: user,
+          store_item: sItem,
+        )
+  end
+
+
+
   # itemsPerShelf = 3
   # Store.all.each do |store|
   #   itemCount = store.items.count

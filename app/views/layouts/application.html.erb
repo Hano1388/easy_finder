@@ -46,10 +46,12 @@
         <!-- </div> -->
       </div>
     </div>
-
-    <div class="container main-container">
-      <%= yield %>
+    <div class="main-container-holder">
+      <div class="container main-container">
+        <%= yield %>
+      </div>
     </div>
-    
+
+    <%= render 'layouts/footer' %>
   </body>
 </html>
