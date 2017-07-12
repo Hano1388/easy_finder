@@ -31,9 +31,9 @@
           </li>
         </ul>
         <ul class="collapse nav navbar-nav nav-collapse" id="nav-collapse1">
-          <form class="simple-search-field" action="/items" accept-charset="UTF-8" method="get">
+          <form class="simple-search-field" action="/items" accept-charset="UTF-8" method="get" data-remote="true">
             <div class="input-group">
-              <input type="text" name="search" value="" class="form-control search-field" placeholder="Search for an item...">
+              <input type="text" name="search" value="" class="form-control search-field", remote="true" placeholder="Search for an item...">
               <span class="input-group-btn">
                 <input type="submit" name="commit" value="Search", remote="true" class="btn btn-outline search-button" data-disable-with="search">
               </span>
@@ -55,3 +55,12 @@
   </nav><!-- /.navbar -->
 </div>
 <%= render './searches/new' %>
+
+<!-- <script>
+  document.getElementById('searchForm').addEventListener('submit', function(e){
+    const customSearchForm = document.querySelector('#searchModal');
+    customSearchForm.classList.remove('fade in');
+    // customSearchForm.classList.remove('fade in');
+    // customSearchForm.classList.addClass('fade out');
+  })
+</script> -->

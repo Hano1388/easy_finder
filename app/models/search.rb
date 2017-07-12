@@ -5,9 +5,8 @@ class Search < ApplicationRecord
   def items
     @items ||= find_items
   end
-
+  
   private
-
   def find_items
     items = Item.order(:name)
     items = items.joins(:stores).where(store_id: store_id) if store_id.present?

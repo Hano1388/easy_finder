@@ -1,4 +1,3 @@
-document.querySelector('#searchResults').innerHTML = "<%= j render  'items/items', review: @review %>"
-
-
-// document.querySelector('#searchResults').fadeOut();
+document.querySelector('#searchResults').innerHTML = "<%= j render  'items/items', review: @review %>";
+document.querySelector('#searchModal').classList.removeClass('in');
+document.querySelector('#searchModal').classList.addClass('out');

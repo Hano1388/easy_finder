@@ -1,4 +1,4 @@
-<%= simple_form_for @search, remote: true  do |f| %>
+<%= simple_form_for @search || Search.new, remote: true, :html => {:id => "searchForm"}  do |f| %>
 
       <div class="modal-header">
         <h5 class="modal-title" id="searchModalLabel">New Search</h5>
