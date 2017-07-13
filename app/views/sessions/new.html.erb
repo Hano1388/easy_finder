@@ -1,4 +1,4 @@
-<h1>Sign In</h1>
+<!-- <h1>Sign In</h1>
 <%= form_tag sessions_path do %>
   <div>
     <%= label_tag :email %>
@@ -9,4 +9,17 @@
     <%= password_field_tag :password, '' %>
   </div>
   <%= submit_tag 'Sign In' %>
-<% end %>
+<% end %> -->
+
+      <h1>Sign In</h1>
+  <form action="/sessions" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="p/7wLhXTMmkXWMk+FK7hhkxF2KeJfGunExIvnm5fzQpypq0MreluTSkP6uiHD0NTHLbHQ9BKaiGkITXGpEecmQ==">
+    <div class="form-group string required user_first_name">
+      <label class="control-label string required" for="email"><abbr title="required">*</abbr> Email</label>
+      <input class="form-control string required" type="email" name="email" id="email">
+    </div>
+    <div class="form-group password optional user_password">
+      <label class="control-label password optional" for="password"><abbr title="required">*</abbr> Password</label>
+      <input class="form-control password optional" type="password" name="password" id="password" value="">
+    </div>
+    <input type="submit" name="commit" value="Sign In" class="btn btn-primary" data-disable-with="Sign In">
+  </form>

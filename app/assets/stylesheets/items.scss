@@ -4,13 +4,15 @@
 
 // STORES TABLE IN ITEM INDEX STYLES
 .store-link > a {
-  color: 	rgb(111, 84, 153) ;
+  color: 	#de6221 ;
   text-decoration: none;
   font-size: 18px;
 }
 
 .store-link > a:hover{
-  color: 	#ff9016;
+  // color: 	#ff9016;
+  color: 	#225848;
+  font-weight: bold;
   text-decoration: none;
   font-size: 18px;
 }

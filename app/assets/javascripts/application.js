@@ -32,11 +32,11 @@ $(function(){
 
   $('#new-review').autosize({append: "\n"});
 
-  var reviewBox = $('#post-review-box');
-  var newReview = $('#new-review');
-  var openReviewBtn = $('#open-review-box');
-  var closeReviewBtn = $('#close-review-box');
-  var ratingsField = $('#ratings-hidden');
+  let reviewBox = $('#post-review-box');
+  let newReview = $('#new-review');
+  let openReviewBtn = $('#open-review-box');
+  let closeReviewBtn = $('#close-review-box');
+  let ratingsField = $('#ratings-hidden');
 
   openReviewBtn.click(function(e)
   {
@@ -67,3 +67,11 @@ $(function(){
 });
 
 // END OF REVIEW JS
+
+
+// $('#searchForm').on('submit', function(e) {
+//   e.preventDefault();
+//   console.log('submitted');
+//   $('#searchModal').removeClass('fade in');
+//   $('#searchModal').addClass('fade in');
+// });

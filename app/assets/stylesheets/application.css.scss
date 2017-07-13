@@ -21,16 +21,16 @@
 
  * {
    font-family: serif, Arial, Sans-serif ;
+  //  color: rgb(111, 84, 153) !important;
  }
 
-//  body {
-//     background-image: url('https://ak3.picdn.net/shutterstock/videos/5742956/thumb/1.jpg');
-//     background-position: center center;
-//     background-repeat: no-repeat;
-//     background-attachment:fixed;
-//     background-size: cover;
-//     background-color: #464646;
-// }
+ body {
+     background-color: #e7f3ff;
+    //  border-left: 40px;
+    //  border-left-color: #de6221;
+    //  border-right: 40px #de6221;
+    //  border-right-color: #de6221;
+}
 
  .row {
    margin-left: 0;
@@ -39,137 +39,294 @@
    margin-bottom: 0;
  }
 
- // SHOW HEADERS
-  .singleItem {
-    border-top: ridge rgb(111, 84, 153) !important;
-    // border-bottom: inset rgb(111, 84, 153);
-    border-radius: 50px;
-    margin-top: 0px;
-    margin-bottom: 10px;
-    width: 100%;
-    // margin-left: calc(2% / 2);
-    // margin-right: calc(2% / 2);
-  }
-
-  tr {
-    // border-bottom: 2px rgb(111, 84, 153);
-    background-color: whitesmoke;
-  }
-
-
-
-
 
 // NAVBAR STYLES
 // .navbar-brand { position: relative; z-index: 2; }
 .navbar-brand {
-  color: rgb(111, 84, 153) !important;
+  color: #e7f3ff !important;
+  // font-weight: bold !important;
+  font-variant: small-caps !important;
+  font-stretch: ultra-expanded !important;
+  font-size: 24px !important;
 }
 
-nav {
+header > nav {
+  background-color: #de6221 !important;
+  // background-color: #feb100 !important;
   border-style: ridge !important;
-  // border-bottom: rgb(111, 84, 153) !important;
-  // border-top: rgb(111, 84, 153) !important;
-  border-radius: 30px !important;
-  color: rgb(111, 84, 153) !important;
+
+  border-bottom-left-radius: 100px !important;
+  border-bottom-right-radius: 100px !important;
+  position: fixed !important;
+  z-index: 999 !important;
+  width: 100% !important;
+
 }
+
+// Footer
+footer > nav {
+  background-color: transparent !important;
+
+  // border-top-right-radius: 50px !important;
+  // border-top-left-radius: 50px !important;
+  position: fixed !important;
+  z-index: 999 !important;
+  width: 80% !important;
+  // border-bottom: 5px;
+  // border-bottom: ridge #e7f3ff !important;
+}
+
+.sticky-container {
+  // background-color: #e7f3ff;
+  // background-color: transparent;
+  // background-color: #feb100;
+  border-top-right-radius: 50px !important;
+  border-bottom-right-radius: 50px !important;
+  padding: 0px;
+  margin: 0px;
+  position: fixed;
+  left: -10px;
+  top: 290px;
+  width: 70px;
+}
+
+ul.social-network {
+	list-style: none;
+	// display: inline;
+	// margin-left:0 !important;
+	padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+ul.social-network li {
+  margin-top: 20px;
+	// display: inline;
+	// margin: 0 5px;
+}
+
+
+/* footer social icons */
+.social-network a.icoRss:hover {
+	background-color: #F56505;
+}
+.social-network a.icoFacebook:hover {
+	background-color:#3B5998;
+}
+.social-network a.icoTwitter:hover {
+	background-color:#33ccff;
+}
+.social-network a.icoGoogle:hover {
+	background-color:#BD3518;
+}
+.social-network a.icoVimeo:hover {
+	background-color:#0590B8;
+}
+.social-network a.icoLinkedin:hover {
+	background-color:#007bb7;
+}
+
+.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+	color:#fff;
+}
+a.socialIcon:hover, .socialHoverClass {
+	color:#44BCDD;
+}
+
+.social-circle li a {
+	display:inline-block;
+	position:relative;
+	margin:0 auto 0 auto;
+
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  border-radius:50%;
+  // -moz-border-top-left-radius:50%;
+  // -moz-border-top-right-radius:50%;
+  // -webkit-border-top-left-radius:50%;
+	// -webkit-border-top-right-radius:50%;
+
+	text-align:center;
+	width: 50px;
+	height: 50px;
+	font-size:20px;
+}
+.social-circle li i {
+	margin:0;
+	line-height:50px;
+	text-align: center;
+}
+
+.social-circle li a:hover i, .triggeredHover {
+	-moz-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-ms--transform: rotate(360deg);
+	transform: rotate(360deg);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.social-circle i {
+	color: #fff;
+	-webkit-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	-o-transition: all 0.8s;
+	-ms-transition: all 0.8s;
+	transition: all 0.8s;
+}
+
+footer nav ul a {
+  background-color: #de6221;
+  // background-color: yellowgreen;
+  // background-color: #e7f3ff;
+ // background-color: #D3D3D3;
+}
+// FOOTER STYLES END HERE
 
 #hamburger-button {
-  border-radius: 30px;
-}
-#hamburger-button:hover {
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
   background-color: white;
 }
-
-// MAIN CONTAINER
-.main-container {
-  margin-top: -20px;
-  // border-top: groove rgb(111, 84, 153) !important;
-  // border-bottom: groove rgb(111, 84, 153) !important;
-  // border-radius: 50px;
+#hamburger-button:hover {
+  background-color: #e7f3ff;
 }
 
 // MAIN SEARCH BUTTON ON THE RIGHT
-.navbar-nav.navbar-right .btn { position: relative; z-index: 2; padding: 4px 20px; margin: 10px auto; transition: transform 0.3s; }
+.navbar-nav.navbar-right .btn {
+  position: relative;
+  z-index: 2;
+  padding: 4px 20px;
+   margin: 10px auto;
+   transition: transform 0.3s;
+ }
 
+
+// NAVBAR LINKS
 .navbar-nav > li > a {
-  color: rgb(111, 84, 153) !important;
+  color: #e7f3ff !important;
+  font-family: sans-serif;
+  font-weight: bold !important;
+  font-variant: small-caps !important;
+  font-size: 20px !important;
 }
+
+.navbar-nav > li > a:hover {
+  color: yellow !important;
+}
+
 // STYLES TO NOT LET THE BRAND DISAPPEAR WHILE TOGGLING SEARCHES
-.navbar .navbar-collapse { position: relative; overflow: hidden !important; }
+.navbar .navbar-collapse {
+  position: relative;
+  overflow: hidden !important;
+}
 
 // STYLES TO MAKE THE CLOSEST NAVBAR CHILD HAVE A PADDING WITH SEARCH BUTTON
 .navbar .navbar-collapse .navbar-right > li:last-child { padding-left: 22px; }
 
 // STYLES TO COLLAPSE SEARCH FORM AND HIDDING THE LINKS
 .navbar .nav-collapse { position: absolute; z-index: 1; top: 0; left: 0; right: 0; bottom: 0; margin: 0; padding-right: 120px; padding-left: 80px; width: 100%; }
-.navbar.navbar-default .nav-collapse { background-color: #f8f8f8; }
+.navbar.navbar-default .nav-collapse { background-color: transparent; }
 
 .navbar.navbar-inverse .nav-collapse { background-color: #222; }
 .navbar .nav-collapse .navbar-form { border-width: 0; box-shadow: none; }
 .nav-collapse>li { float: right; }
 
 // MAIN SEARCH BUTTON STYLES
-.btn.btn-circle { border-radius: 50px; }
-.btn.btn-outline { background-color: transparent; }
+.btn.btn-circle {
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.btn.btn-outline {
+  background-color: white;
+  // border-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  color: #de6221 !important;
+}
 
 
 .navbar-nav.navbar-right .btn:not(.collapsed) {
-    background-color: rgb(111, 84, 153);
-    border-color: rgb(111, 84, 153);
-    color: rgb(255, 255, 255) !important;
+    background-color: white;
+    border-color: yellow;
+    color:  #de6221 !important;
+    width: 95%;
+}
+.navbar-nav.navbar-right .btn.collapsed {
+    background-color: white;
+    border-color: yellow;
+    color:  #de6221 !important;
+    width: 95%;
 }
 
 .navbar-nav.navbar-right .btn:not(.collapsed):hover {
-    background-color: rgb(255, 255, 255);
-    border-color: rgb(111, 84, 153);
-    color: rgb(111, 84, 153) !important;
+    background-color: yellowgreen;
+    border-color: yellow;
+    color: black !important;
+    font-weight: 200;
 }
 
 .navbar-nav.navbar-right .btn.collapsed:hover {
-  background-color: rgb(111, 84, 153);
-  border-color: rgb(111, 84, 153);
-  color: rgb(255, 255, 255) !important;
+  background-color: yellowgreen;
+  border-color: yellow;
+  color: black !important;
+  font-weight: 200;
 }
 // End of main search button styles
 
 // Search inputs styles
 ul form .search-button:not(.collapsed) {
-    background-color: rgb(111, 84, 153);
-    border-color: rgb(111, 84, 153);
+    border-color: yellow;
     color: rgb(255, 255, 255);
-    border-radius: 50px !important;
+    font-weight: bold;
+    border-bottom-left-radius: 50px !important;
+    border-bottom-right-radius: 50px;
 }
 
 ul form .search-button:not(.collapsed):hover {
-    background-color: rgb(255, 255, 255);
+    background-color: yellowgreen;
     border-color: rgb(111, 84, 153);
-    color: rgb(111, 84, 153);
+    color: black !important;
+    // font-weight: 200;
 }
 
 ul form .search-field:not(.collapsed) {
     // background-color: rgb(111, 84, 153);
-    border-color: rgb(111, 84, 153) !important;
+    border-color: yellow !important;
     color: rgb(111, 84, 153) !important;
     font-weight: 400 !important;
-    border-radius: 50px !important;
+    border-bottom-left-radius: 50px !important;
+    border-bottom-right-radius: 50px !important;
+}
+
+ul form .search-field:not(.collapsed):focus {
+    background-color: whitesmoke !important;
+    border: ridge yellow !important;
+}
+ul form .search-field:not(.collapsed):hover {
+    background-color: whitesmoke !important;
+    border: ridge yellow !important;
 }
 // End of search inputs styles
 
 // Signed in user welcoming message styles
-.welcoming-user > a {
-  text-decoration: none;
-  float: left;
-  position: relative;
-  display: block;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  color: yellowgreen;
-}
-.welcoming-user > a:hover {
-  font-weight: bold;
-  color: rgb(111, 84, 153);
-}
+// .welcoming-user > a {
+//   text-decoration: none;
+//   float: left;
+//   position: relative;
+//   display: block;
+//   padding-top: 15px;
+//   padding-bottom: 15px;
+//   color: yellowgreen;
+// }
+// .welcoming-user > a:hover {
+//   font-weight: bold;
+//   color: rgb(111, 84, 153);
+// }
 // End of signed in user welcoming message styles
 
 .navbar.navbar-default .nav-collapse,
@@ -210,3 +367,69 @@ ul form .search-field:not(.collapsed) {
     }
 }
 // END OF NAVBAR STYLES
+
+
+
+// MAIN CONTAINER
+.main-container-holder {
+  width: 100%;
+  // margin-top: 50px;
+  // border-top: groove #de6221;
+
+  // border-top-left-radius: 50px;
+  // border-top-right-radius: 50px;
+  // border-radius: 50px;
+
+  border-left-style: solid;
+  border-left-width: 50px;
+  border-left-color: whitesmoke;
+
+  border-right-style: solid;
+  border-right-width: 50px;
+  border-right-color: whitesmoke;
+}
+.main-container {
+  width: 100%;
+  margin-top: 50px;
+  border-top: groove #de6221;
+
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+
+  // border-left-style: solid;
+  // border-left-width: 100px;
+  // border-left-color: #de6221;
+  //
+  // border-right-style: solid;
+  // border-right-width: 100px;
+  // border-right-color: #de6221;
+
+
+  // border-style: ridge !important;
+  // border-top: ridge;
+  // border-top-left-radius: 30px !important;
+  // border-top-right-radius: 30px !important;
+  // border-top: groove rgb(111, 84, 153) !important;
+  // border-bottom: groove rgb(111, 84, 153) !important;
+  // border-radius: 50px;
+}
+// SHOW HEADERS
+ .singleItem {
+   border-bottom: ridge #de6221 !important;
+   // border-bottom: inset rgb(111, 84, 153);
+   border-radius: 50px;
+   margin-top: 0px;
+   margin-bottom: 10px;
+   width: 100%;
+   // margin-left: calc(2% / 2);
+   // margin-right: calc(2% / 2);
+ }
+ // .store-table{
+ //   background-color: white !important;
+ // }
+
+ tr {
+   // border-bottom: 2px rgb(111, 84, 153);
+  //  background-color: whitesmoke;
+  // color: white !important;
+ }
