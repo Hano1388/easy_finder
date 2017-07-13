@@ -51,8 +51,8 @@
 }
 
 header > nav {
-  // background-color: red !important;
   background-color: #de6221 !important;
+  // background-color: #feb100 !important;
   border-style: ridge !important;
 
   border-bottom-left-radius: 100px !important;
@@ -67,13 +67,27 @@ header > nav {
 footer > nav {
   background-color: transparent !important;
 
-  border-top-right-radius: 50px !important;
-  border-top-left-radius: 50px !important;
+  // border-top-right-radius: 50px !important;
+  // border-top-left-radius: 50px !important;
   position: fixed !important;
   z-index: 999 !important;
   width: 80% !important;
   // border-bottom: 5px;
   // border-bottom: ridge #e7f3ff !important;
+}
+
+.sticky-container {
+  // background-color: #e7f3ff;
+  // background-color: transparent;
+  // background-color: #feb100;
+  border-top-right-radius: 50px !important;
+  border-bottom-right-radius: 50px !important;
+  padding: 0px;
+  margin: 0px;
+  position: fixed;
+  left: -10px;
+  top: 290px;
+  width: 70px;
 }
 
 ul.social-network {
@@ -82,7 +96,7 @@ ul.social-network {
 	// margin-left:0 !important;
 	padding: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
@@ -150,11 +164,11 @@ a.socialIcon:hover, .socialHoverClass {
 	-webkit-transform: rotate(360deg);
 	-ms--transform: rotate(360deg);
 	transform: rotate(360deg);
-	-webkit-transition: all 0.2s;
-	-moz-transition: all 0.2s;
-	-o-transition: all 0.2s;
-	-ms-transition: all 0.2s;
-	transition: all 0.2s;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	transition: all 0.3s;
 }
 .social-circle i {
 	color: #fff;
@@ -195,9 +209,10 @@ footer nav ul a {
 // NAVBAR LINKS
 .navbar-nav > li > a {
   color: #e7f3ff !important;
+  font-family: sans-serif;
   font-weight: bold !important;
   font-variant: small-caps !important;
-  font-size: 17px !important;
+  font-size: 20px !important;
 }
 
 .navbar-nav > li > a:hover {
