@@ -7,7 +7,8 @@ class ItemsController < ApplicationController
     # @newsearch = Search.new
     if params[:search_id]
       @search = Search.find(params[:search_id])
-      @items = @search.items.paginate(:page)
+      @items = @search.items
+      # @items = @search.items.paginate(:page)
     else
       @items = Item.all.search(params[:search]).limit(10)
     end
@@ -44,7 +45,7 @@ class ItemsController < ApplicationController
       marker.lng store.longitude
       marker.infowindow store.name
     end
-    
+
   end
 
 
