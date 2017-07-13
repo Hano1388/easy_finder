@@ -67,7 +67,8 @@ header > nav {
 footer > nav {
   background-color: transparent !important;
 
-  border-radius: 50px !important;
+  border-top-right-radius: 50px !important;
+  border-top-left-radius: 50px !important;
   position: fixed !important;
   z-index: 999 !important;
   width: 80% !important;
@@ -124,9 +125,15 @@ a.socialIcon:hover, .socialHoverClass {
 	display:inline-block;
 	position:relative;
 	margin:0 auto 0 auto;
-	-moz-border-radius:50%;
-	-webkit-border-radius:50%;
-	border-radius:50%;
+
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  border-radius:50%;
+  // -moz-border-top-left-radius:50%;
+  // -moz-border-top-right-radius:50%;
+  // -webkit-border-top-left-radius:50%;
+	// -webkit-border-top-right-radius:50%;
+
 	text-align:center;
 	width: 50px;
 	height: 50px;
@@ -164,10 +171,6 @@ footer nav ul a {
   // background-color: #e7f3ff;
  // background-color: #D3D3D3;
 }
-
-
-
-
 // FOOTER STYLES END HERE
 
 #hamburger-button {
@@ -220,11 +223,14 @@ footer nav ul a {
 
 // MAIN SEARCH BUTTON STYLES
 .btn.btn-circle {
-  // border-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 .btn.btn-outline {
   background-color: white;
-  border-radius: 50px;
+  // border-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
   color: #de6221 !important;
 }
 
@@ -233,11 +239,13 @@ footer nav ul a {
     background-color: white;
     border-color: yellow;
     color:  #de6221 !important;
+    width: 95%;
 }
 .navbar-nav.navbar-right .btn.collapsed {
     background-color: white;
     border-color: yellow;
     color:  #de6221 !important;
+    width: 95%;
 }
 
 .navbar-nav.navbar-right .btn:not(.collapsed):hover {
@@ -260,14 +268,15 @@ ul form .search-button:not(.collapsed) {
     border-color: yellow;
     color: rgb(255, 255, 255);
     font-weight: bold;
-    border-radius: 50px !important;
+    border-bottom-left-radius: 50px !important;
+    border-bottom-right-radius: 50px;
 }
 
 ul form .search-button:not(.collapsed):hover {
     background-color: yellowgreen;
     border-color: rgb(111, 84, 153);
     color: black !important;
-    font-weight: 200;
+    // font-weight: 200;
 }
 
 ul form .search-field:not(.collapsed) {
@@ -275,7 +284,8 @@ ul form .search-field:not(.collapsed) {
     border-color: yellow !important;
     color: rgb(111, 84, 153) !important;
     font-weight: 400 !important;
-    border-radius: 50px !important;
+    border-bottom-left-radius: 50px !important;
+    border-bottom-right-radius: 50px !important;
 }
 
 ul form .search-field:not(.collapsed):focus {
@@ -289,19 +299,19 @@ ul form .search-field:not(.collapsed):hover {
 // End of search inputs styles
 
 // Signed in user welcoming message styles
-.welcoming-user > a {
-  text-decoration: none;
-  float: left;
-  position: relative;
-  display: block;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  color: yellowgreen;
-}
-.welcoming-user > a:hover {
-  font-weight: bold;
-  color: rgb(111, 84, 153);
-}
+// .welcoming-user > a {
+//   text-decoration: none;
+//   float: left;
+//   position: relative;
+//   display: block;
+//   padding-top: 15px;
+//   padding-bottom: 15px;
+//   color: yellowgreen;
+// }
+// .welcoming-user > a:hover {
+//   font-weight: bold;
+//   color: rgb(111, 84, 153);
+// }
 // End of signed in user welcoming message styles
 
 .navbar.navbar-default .nav-collapse,

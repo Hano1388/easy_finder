@@ -19,7 +19,7 @@
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
           <% if user_signed_in? %>
-          <l1 class="welcoming-user"><a href="#">Welcome</a></l1>
+          <!-- <l1 class="welcoming-user"><a href="#">Welcome</a></l1> -->
           <li><a rel="nofollow" data-method="delete" href="/sessions">Sign Out</a></li>
           <% else %>
           <li><a href="/sessions/new">Sign In</a></li>
@@ -35,7 +35,7 @@
             <div class="input-group">
               <input type="text" name="search" value="" class="form-control search-field", remote="true" placeholder="Search for an item...">
               <span class="input-group-btn">
-                <input type="submit" name="commit" value="Search", remote="true" class="btn btn-outline search-button" data-disable-with="search">
+                <input type="submit" name="commit" value="Search" remote="true" class="btn btn-outline search-button" data-disable-with="search">
               </span>
 
               <span class="input-group-btn">
