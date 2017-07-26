@@ -25,7 +25,7 @@
  }
 
  body {
-     background-color: #e7f3ff;
+     background-color: #c5d3cf;
     //  border-left: 40px;
     //  border-left-color: #de6221;
     //  border-right: 40px #de6221;
@@ -43,20 +43,24 @@
 // NAVBAR STYLES
 // .navbar-brand { position: relative; z-index: 2; }
 .navbar-brand {
-  color: #e7f3ff !important;
+  // color: #e7f3ff !important;
+  color: #fff !important;
   // font-weight: bold !important;
   font-variant: small-caps !important;
   font-stretch: ultra-expanded !important;
   font-size: 24px !important;
+  font-weight: bolder;
 }
 
 header > nav {
-  background-color: #de6221 !important;
+  // background-color: #de6221 !important;
+  background-color: #643000 !important;
   // background-color: #feb100 !important;
-  border-style: ridge !important;
+  // border-style: ridge !important;
+  border: 0px !important;
 
-  border-bottom-left-radius: 100px !important;
-  border-bottom-right-radius: 100px !important;
+  // border-bottom-left-radius: 40px !important;
+  // border-bottom-right-radius: 40px !important;
   position: fixed !important;
   z-index: 999 !important;
   width: 100% !important;
@@ -180,7 +184,7 @@ a.socialIcon:hover, .socialHoverClass {
 }
 
 footer nav ul a {
-  background-color: #de6221;
+  background-color: #643000;
   // background-color: yellowgreen;
   // background-color: #e7f3ff;
  // background-color: #D3D3D3;
@@ -208,7 +212,8 @@ footer nav ul a {
 
 // NAVBAR LINKS
 .navbar-nav > li > a {
-  color: #e7f3ff !important;
+  // color: #e7f3ff !important;
+  color: #fff !important;
   font-family: sans-serif;
   font-weight: bold !important;
   font-variant: small-caps !important;
@@ -373,6 +378,7 @@ ul form .search-field:not(.collapsed):hover {
 // MAIN CONTAINER
 .main-container-holder {
   width: 100%;
+  background-color: #c5d3cf !important;
   // margin-top: 50px;
   // border-top: groove #de6221;
 
@@ -380,13 +386,13 @@ ul form .search-field:not(.collapsed):hover {
   // border-top-right-radius: 50px;
   // border-radius: 50px;
 
-  border-left-style: solid;
-  border-left-width: 50px;
-  border-left-color: whitesmoke;
+  // border-left-style: solid;
+  // border-left-width: 3px;
+  // border-left-color: #643000;
 
-  border-right-style: solid;
-  border-right-width: 50px;
-  border-right-color: whitesmoke;
+  // border-right-style: solid;
+  // border-right-width: 3px;
+  // border-right-color: #643000;
 }
 .main-container {
   width: 100%;

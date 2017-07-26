@@ -1,7 +1,4 @@
-document.querySelector('#searchResults').innerHTML = "<%= j render  'items/items', review: @review %>";
+document
+  .querySelector('#searchResults')
+    .innerHTML = "<%= j render  'items/items', review: @review %>";
 $('#searchModal').modal('hide');
-// document.querySelector('#searchModal').modal('toggle');
-// document.querySelector('#searchModal').classList.add('out');
-
-// document.querySelector('#searchModal').classList.removeClass('in');
-// document.querySelector('#searchModal').classList.addClass('out');

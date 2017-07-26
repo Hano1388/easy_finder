@@ -67,6 +67,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "rails-erd"
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
 
 end
 
