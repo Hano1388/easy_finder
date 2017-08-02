@@ -46,6 +46,7 @@ gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'chosen-rails'
+gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -68,8 +69,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "rails-erd"
   gem 'rspec-rails', '~> 3.5'
-  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
-
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
